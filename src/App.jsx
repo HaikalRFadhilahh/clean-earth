@@ -12,6 +12,7 @@ const App = () => {
           {" "}
           Clean Earth Coming Soon!
           tes bro
+          Clean Earth juaraaa
         </h1>
       </div>
     </React.Fragment>
