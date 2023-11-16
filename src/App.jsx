@@ -1,8 +1,13 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+
 
 const App = () => {
   return (
+
+    
     <React.Fragment>
+      <Navbar/>
       <div
         className={
           "w-screen h-screen bg-slate-800 flex justify-center items-center"
