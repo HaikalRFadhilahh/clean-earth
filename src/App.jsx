@@ -11,6 +11,7 @@ const App = () => {
         <h1 className={"text-5xl text-slate-200 font-serif"}>
           {" "}
           Clean Earth Coming Soon!
+          tes bro
         </h1>
       </div>
     </React.Fragment>
