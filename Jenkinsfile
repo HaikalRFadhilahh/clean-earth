@@ -36,7 +36,7 @@ pipeline {
         stage ('running docker container') {
             steps {
                 dir(WORKSPACE_LOCATION) {
-                    sh 'docker run -p 127.0.0.1:5000:80 --restart on-failure --name -d cleanearth cleanearth:latest '
+                    sh 'docker run -p 127.0.0.1:5000:80 --restart on-failure --name cleanearth -d cleanearth:latest '
                 }
             }
         }
