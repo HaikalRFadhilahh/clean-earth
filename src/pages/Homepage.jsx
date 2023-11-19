@@ -3,7 +3,6 @@ import WelcomeBanner from '../components/WelcomeBanner'
 
 const Homepage = () => {
   return (
-    
     <div>
         <WelcomeBanner/>
     </div>
