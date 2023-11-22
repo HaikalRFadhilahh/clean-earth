@@ -34,7 +34,7 @@ const Edukasipage = () => {
          </div>
       </div>
 
-      <div className="container mx-auto px-3 flex flex-wrap gap-8">
+      <section className="container mx-auto px-3 flex flex-wrap gap-8 text-[#444444]">
 
          <div className="w-screen flex justify-center">
             <div className="bg-[#B0D9B1] w-1/12 rounded-xl p-1"></div>
@@ -168,7 +168,7 @@ const Edukasipage = () => {
             </div>
          </div>
 
-      </div>
+      </section>
     </div>
   )
 }
