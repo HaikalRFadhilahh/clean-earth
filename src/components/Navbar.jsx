@@ -1,11 +1,18 @@
 import { useState } from "react";
 import Logo from "../assets/Logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+  };
+
   return (
     <nav className='bg-white w-screen'>
       <div className='flex items-center justify-between md:px-3 lg:px-7'>
@@ -22,8 +29,8 @@ const Navbar = () => {
         <ul
           className={"hidden md:flex gap-7 font-light font-poppins text-base"}
         >
-          <li>Beranda</li>
-          <li>Edukasi</li>
+          <li><a href="/">Beranda</a></li>
+          <li><a href="/edukasi">Edukasi</a></li>
           <li>Komunitas</li>
         </ul>
         <div className={"hidden md:flex gap-3"}>
@@ -31,14 +38,15 @@ const Navbar = () => {
             className='outline outline-2 bg-[#B0D9B1] outline-black '
             type='submit'
           >
-            Daftar
+            <NavLink to="daftar">Daftar</NavLink>
           </Button>
           <Button
             className='bg-[#F6F6F6] outline outline-2 outline-black'
             type='submit'
           >
-            Masuk
+            <NavLink to="masuk">Masuk</NavLink>
           </Button>
+          <button onClick={handleLogout}>hapus token</button>
         </div>
 
         {/* Mobile navbar */}
