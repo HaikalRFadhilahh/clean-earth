@@ -1,10 +1,18 @@
 import Navbar from "../components/Navbar";
-import { NavLink} from "react-router-dom";
 import CardEdukasi from '../components/cardEdukasi';
 import apaitusampah from "../assets/edukasi/apa-itu-sampah.png";
 import coverMasalahSampah from "../assets/edukasi/cover-edukasi-masalah-sampah.png";
 import bannerSampah from "../assets/edukasi/banner-edukasi.png";
 import Button from "../components/Button";
+import artikel1 from "../assets/edukasi/artikel1.png";
+import artikel2 from "../assets/edukasi/artikel2.png";
+import artikel3 from "../assets/edukasi/artikel3.png";
+import artikel4 from "../assets/edukasi/artikel4.png";
+import artikel5 from "../assets/edukasi/artikel5.png";
+import artikel6 from "../assets/edukasi/artikel6.png";
+import artikel7 from "../assets/edukasi/artikel7.png";
+import artikel8 from "../assets/edukasi/artikel8.png";
+
 
 const Edukasipage = () => {
   return (
@@ -99,12 +107,61 @@ const Edukasipage = () => {
             <h1 className="text-3xl font-bold font-poppins text-center">
             Ada artikel juga nih, dibaca ya 
             </h1>
-            <div className="flex flex-wrap justify-center items-center mt-16 gap-8">
+            <div className="flex flex-wrap justify-center items-center my-16 gap-8">
 
                <CardEdukasi
-               imageSrc={coverMasalahSampah}
+               imageSrc={artikel1}
                title="Ancaman Tumpukan Sampah"
                content="Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini..."
+               linkTo="/baca"
+               />
+
+               <CardEdukasi
+               imageSrc={artikel2}
+               title="Jenis - jenis Sampah Plastik"
+               content="Ternyata banyak loh jenis-jenis sampah plastik yang mungkin belum kamu tau, yuk simak artikel ini..."
+               linkTo="/baca"
+               />
+
+               <CardEdukasi
+               imageSrc={artikel3}
+               title="Masalah Sampah Plastikh"
+               content="Ternyata sampah plastik banyak menimbulkan masalah nih, yuk kenali masalah-masalahnya dengan membaca artikel ini..."
+               linkTo="/baca"
+               />
+
+               <CardEdukasi
+               imageSrc={artikel4}
+               title="Sampah Plastik Tak Terkendali"
+               content="Semakin hari sampah plastik semakin tak bisa dikendalikan lagi, yuk coba baca artikel ini..."
+               linkTo="/baca"
+               />
+
+               <CardEdukasi
+               imageSrc={artikel5}
+               title="Sampah Plastik Cemari Sungai"
+               content="Ternyata banyak loh sungai yang sudah tercemari sampah - sampah plastik, coba yuk simak artikel ini..."
+               linkTo="/baca"
+               />
+
+               <CardEdukasi
+               imageSrc={artikel6}
+               title="Pengelolaan Sampah itu Penting"
+               content="Edukasi mengenai pengelolaan sampah itu penting banget loh, kamu harus tau ya. Yuk baca artikel ini..."
+               linkTo="/baca"
+               />
+
+               <CardEdukasi
+               imageSrc={artikel7}
+               title="Manfaat Daur Ulang Sampah"
+               content="Sampah juga bisa dimanfaatkan loh, yuk coba disimak penjelasan pada artikel dibawah ini..."
+               linkTo="/baca"
+               />
+
+               <CardEdukasi
+               imageSrc={artikel8}
+               title="Masalah Sampah Pada Pariwisata"
+               content="Sampah tidak hanya mengganggu lingkungan sekitar, namun sudah menganggu bidang pariwisata juga nih, yuk disimak..."
                linkTo="/baca"
                />
 
