@@ -1,4 +1,6 @@
 import Navbar from "../components/Navbar";
+import { NavLink} from "react-router-dom";
+import CardEdukasi from '../components/cardEdukasi';
 import apaitusampah from "../assets/edukasi/apa-itu-sampah.png";
 import coverMasalahSampah from "../assets/edukasi/cover-edukasi-masalah-sampah.png";
 import bannerSampah from "../assets/edukasi/banner-edukasi.png";
@@ -98,142 +100,13 @@ const Edukasipage = () => {
             Ada artikel juga nih, dibaca ya 
             </h1>
             <div className="flex flex-wrap justify-center items-center mt-16 gap-8">
-               
-               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
-                  <div className="flex flex-col text-center gap-2 p-2">
-                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-                     <h2 className="text-md font-bold font-poppins">
-                        Ancaman Tumpukan Sampah
-                     </h2>
-                     <p>
-                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
-                     </p>
-                  </div>
-                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
-                     <h3>
-                        BACA SELENGKANYA
-                     </h3>
-                  </div>
-               </div>
-               
-               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
-                  <div className="flex flex-col text-center gap-2 p-2">
-                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-                     <h2 className="text-md font-bold font-poppins">
-                        Ancaman Tumpukan Sampah
-                     </h2>
-                     <p>
-                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
-                     </p>
-                  </div>
-                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
-                     <h3>
-                        BACA SELENGKANYA
-                     </h3>
-                  </div>
-               </div>
-               
-               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
-                  <div className="flex flex-col text-center gap-2 p-2">
-                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-                     <h2 className="text-md font-bold font-poppins">
-                        Ancaman Tumpukan Sampah
-                     </h2>
-                     <p>
-                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
-                     </p>
-                  </div>
-                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
-                     <h3>
-                        BACA SELENGKANYA
-                     </h3>
-                  </div>
-               </div>
-               
-               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
-                  <div className="flex flex-col text-center gap-2 p-2">
-                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-                     <h2 className="text-md font-bold font-poppins">
-                        Ancaman Tumpukan Sampah
-                     </h2>
-                     <p>
-                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
-                     </p>
-                  </div>
-                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
-                     <h3>
-                        BACA SELENGKANYA
-                     </h3>
-                  </div>
-               </div>
-               
-               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
-                  <div className="flex flex-col text-center gap-2 p-2">
-                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-                     <h2 className="text-md font-bold font-poppins">
-                        Ancaman Tumpukan Sampah
-                     </h2>
-                     <p>
-                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
-                     </p>
-                  </div>
-                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
-                     <h3>
-                        BACA SELENGKANYA
-                     </h3>
-                  </div>
-               </div>
-               
-               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
-                  <div className="flex flex-col text-center gap-2 p-2">
-                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-                     <h2 className="text-md font-bold font-poppins">
-                        Ancaman Tumpukan Sampah
-                     </h2>
-                     <p>
-                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
-                     </p>
-                  </div>
-                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
-                     <h3>
-                        BACA SELENGKANYA
-                     </h3>
-                  </div>
-               </div>
-               
-               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
-                  <div className="flex flex-col text-center gap-2 p-2">
-                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-                     <h2 className="text-md font-bold font-poppins">
-                        Ancaman Tumpukan Sampah
-                     </h2>
-                     <p>
-                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
-                     </p>
-                  </div>
-                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
-                     <h3>
-                        BACA SELENGKANYA
-                     </h3>
-                  </div>
-               </div>
-               
-               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
-                  <div className="flex flex-col text-center gap-2 p-2">
-                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-                     <h2 className="text-md font-bold font-poppins">
-                        Ancaman Tumpukan Sampah
-                     </h2>
-                     <p>
-                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
-                     </p>
-                  </div>
-                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
-                     <h3>
-                        BACA SELENGKANYA
-                     </h3>
-                  </div>
-               </div>
+
+               <CardEdukasi
+               imageSrc={coverMasalahSampah}
+               title="Ancaman Tumpukan Sampah"
+               content="Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini..."
+               linkTo="/baca"
+               />
 
             </div>
          </div>
