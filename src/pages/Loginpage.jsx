@@ -41,9 +41,9 @@ const Loginpage = () => {
 
   return (
     <div className='w-full flex bg-[#B0D9B1]'>
-      <div className='w-1/2 h-screen bg-cover bg-right' style={{backgroundImage: `url(${BannerLogin})`}}></div>
+      <div className='md:w-1/2 h-screen bg-cover bg-right' style={{backgroundImage: `url(${BannerLogin})`}}></div>
       
-      <div className='w-1/2 flex justify-center items-center'>
+      <div className='w-full md:w-1/2 flex justify-center items-center'>
          <form onSubmit={handleLogin} className='bg-white w-4/5 h-5/6 rounded-3xl p-12 font-poppins'>
             <h1 className='text-5xl font-medium mt-8 mb-16'>
                Masuk

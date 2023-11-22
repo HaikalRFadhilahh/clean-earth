@@ -48,9 +48,9 @@ const RegistrationPage = () => {
 
   return (
     <div className='w-full flex bg-[#B0D9B1]'>
-      <div className='w-1/2 h-screen bg-cover bg-right' style={{backgroundImage: `url(${BannerLogin})`}}></div>
+      <div className='md:w-1/2 h-screen bg-cover bg-right' style={{backgroundImage: `url(${BannerLogin})`}}></div>
       
-      <div className='w-1/2 flex justify-center items-center'>
+      <div className='w-full md:w-1/2 flex justify-center items-center'>
         <form onSubmit={handleRegister} className='bg-white w-4/5 h-5/6 rounded-3xl p-12 font-poppins'>
             <h1 className='text-5xl font-medium mb-10'>
               Daftar
@@ -67,8 +67,8 @@ const RegistrationPage = () => {
                 aria-label='Email'
               />
 
-              <div className='flex justify-between'>
-                  <div className='flex flex-col w-screen mr-4'>
+              <div className='flex flex-col md:flex-row justify-between'>
+                  <div className='flex flex-col md:w-screen md:mr-4'>
                      <label className='my-4'>Username</label>
                      <input 
                         type="text" 
@@ -79,7 +79,7 @@ const RegistrationPage = () => {
                         aria-label='Username'
                      />
                   </div>
-                  <div className='flex flex-col w-screen ml-4'>
+                  <div className='flex flex-col md:w-screen md:ml-4'>
                      <label className='my-4'>Nomor Kontak</label>
                      <input 
                         type="tel" 
