@@ -53,7 +53,9 @@ const Edukasipage = () => {
                <div className="bg-[#C6C6C6] w-3/5 rounded-xl pt-0.5 mt-2"></div>
             </div>
             <div className="flex justify-center items-center mt-16">
-               <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+               <div className="w-3/4 md:w-1/2 flex justify-center">
+                  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/i0bb7Et0ots" title="Sejauh Mana Masalah Sampah di Indonesia?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               </div>
             </div>
          </div>
 
@@ -70,12 +72,24 @@ const Edukasipage = () => {
             <br/>Selamat menonton !!!
             </p>
             <div className="flex flex-wrap justify-center items-center mt-16 gap-8">
-               <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-               <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-               <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-               <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-               <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-               <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+               <div className="w-3/4 md:w-1/4">
+                  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/cjY-9U-YF4o" title="3 Ide Daur Ulang dari Barang Bekas yang Sangat Bermanfaat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               </div>
+               <div className="w-3/4 md:w-1/4">
+                  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/EPoDzLTlmyY" title="3 Ide Daur Ulang Sedotan Plastik | Ide Kreatif Sedotan Plastik Bekas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               </div>
+               <div className="w-3/4 md:w-1/4">
+                  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/ogE3n_KdYfg?list=PL5aQ2PMwUcmvQrmm9CdS1MWkODBlt7Qmh" title="Ide Kreatif dari Gelas Plastik Bekas  || Ide yang Tak terpikirkan dari Gelas Plastik Minuman" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               </div>
+               <div className="w-3/4 md:w-1/4">
+                  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/FrxrhaYsVWs" title="Cara membuat Topi Karnaval Dari Kertas Bentuk Kerucut / Hiasan 17 Agustus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               </div>
+               <div className="w-3/4 md:w-1/4">
+                  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/MJd3bo_XRaU" title="Daur ulang sampah plastik bungkus snack menjadi tempat pensil || Recycle from plastic snack" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               </div>
+               <div className="w-3/4 md:w-1/4">
+                  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/yT-ntEUJq40" title="ECOBRICK Sampah Plastik : Apa Itu Ecobric &amp; Cara Membuatnya (Gaya Hidup Berkelanjutan) Projek P5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               </div>
             </div>
          </div>
 
@@ -85,15 +99,136 @@ const Edukasipage = () => {
             </h1>
             <div className="flex flex-wrap justify-center items-center mt-16 gap-8">
                
-               <div className="flex flex-col text-center w-80 h-96 gap-2 shadow-xl p-2 rounded-2xl">
-                  <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
-                  <h2 className="text-md font-bold font-poppins">
-                     Ancaman Tumpukan Sampah
-                  </h2>
-                  <p>
-                     Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
-                  </p>
-                  <div className="p-2 block bottom-0">
+               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
+                  <div className="flex flex-col text-center gap-2 p-2">
+                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+                     <h2 className="text-md font-bold font-poppins">
+                        Ancaman Tumpukan Sampah
+                     </h2>
+                     <p>
+                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
+                     </p>
+                  </div>
+                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
+                     <h3>
+                        BACA SELENGKANYA
+                     </h3>
+                  </div>
+               </div>
+               
+               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
+                  <div className="flex flex-col text-center gap-2 p-2">
+                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+                     <h2 className="text-md font-bold font-poppins">
+                        Ancaman Tumpukan Sampah
+                     </h2>
+                     <p>
+                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
+                     </p>
+                  </div>
+                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
+                     <h3>
+                        BACA SELENGKANYA
+                     </h3>
+                  </div>
+               </div>
+               
+               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
+                  <div className="flex flex-col text-center gap-2 p-2">
+                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+                     <h2 className="text-md font-bold font-poppins">
+                        Ancaman Tumpukan Sampah
+                     </h2>
+                     <p>
+                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
+                     </p>
+                  </div>
+                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
+                     <h3>
+                        BACA SELENGKANYA
+                     </h3>
+                  </div>
+               </div>
+               
+               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
+                  <div className="flex flex-col text-center gap-2 p-2">
+                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+                     <h2 className="text-md font-bold font-poppins">
+                        Ancaman Tumpukan Sampah
+                     </h2>
+                     <p>
+                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
+                     </p>
+                  </div>
+                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
+                     <h3>
+                        BACA SELENGKANYA
+                     </h3>
+                  </div>
+               </div>
+               
+               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
+                  <div className="flex flex-col text-center gap-2 p-2">
+                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+                     <h2 className="text-md font-bold font-poppins">
+                        Ancaman Tumpukan Sampah
+                     </h2>
+                     <p>
+                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
+                     </p>
+                  </div>
+                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
+                     <h3>
+                        BACA SELENGKANYA
+                     </h3>
+                  </div>
+               </div>
+               
+               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
+                  <div className="flex flex-col text-center gap-2 p-2">
+                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+                     <h2 className="text-md font-bold font-poppins">
+                        Ancaman Tumpukan Sampah
+                     </h2>
+                     <p>
+                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
+                     </p>
+                  </div>
+                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
+                     <h3>
+                        BACA SELENGKANYA
+                     </h3>
+                  </div>
+               </div>
+               
+               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
+                  <div className="flex flex-col text-center gap-2 p-2">
+                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+                     <h2 className="text-md font-bold font-poppins">
+                        Ancaman Tumpukan Sampah
+                     </h2>
+                     <p>
+                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
+                     </p>
+                  </div>
+                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
+                     <h3>
+                        BACA SELENGKANYA
+                     </h3>
+                  </div>
+               </div>
+               
+               <div className="flex flex-col text-center w-80 h-96 shadow-xl rounded-2xl">
+                  <div className="flex flex-col text-center gap-2 p-2">
+                     <img src={coverMasalahSampah} alt="sampah" className="bg-center bg-cover rounded-2xl" />
+                     <h2 className="text-md font-bold font-poppins">
+                        Ancaman Tumpukan Sampah
+                     </h2>
+                     <p>
+                        Semakin hari tumpukan sampah semakin menggunung nih, yuk simak artikel ini...
+                     </p>
+                  </div>
+                  <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
                      <h3>
                         BACA SELENGKANYA
                      </h3>

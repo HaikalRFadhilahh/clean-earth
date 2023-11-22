@@ -46,7 +46,6 @@ const Navbar = () => {
           >
             <NavLink to="masuk">Masuk</NavLink>
           </Button>
-          <button onClick={handleLogout}>hapus token</button>
         </div>
 
         {/* Mobile navbar */}
