@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/img/Logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { IoMdMenu } from "react-icons/io";
