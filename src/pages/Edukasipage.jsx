@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar";
 import CardEdukasi from "../components/CardEdukasi";
 import apaitusampah from "../assets/edukasi/apa-itu-sampah.png";
-import coverMasalahSampah from "../assets/edukasi/cover-edukasi-masalah-sampah.png";
 import bannerSampah from "../assets/edukasi/banner-edukasi.png";
 import Button from "../components/Button";
 import artikel1 from "../assets/edukasi/artikel1.png";
