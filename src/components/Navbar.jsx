@@ -12,13 +12,13 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useRecoilState(nama);
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
-  const [mobileToggle, setMobileToggle] = useState(false);
+  const [configToggle, setConfigToggle] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
     setName(undefined);
     setTokenJWT(undefined);
-    setMobileToggle(false);
+    setConfigToggle(false);
     setOpen(false);
     navigate("/");
   };
@@ -65,8 +65,9 @@ const Navbar = () => {
         ) : (
           <div
             className={
-              "hidden md:flex px-2 rounded-2xl py-1 outline outline-2 outline-black gap-2 items-center"
+              "hidden md:flex px-2 rounded-2xl py-1 outline outline-2 outline-black gap-2 items-center relative cursor-pointer"
             }
+            onClick={() => setConfigToggle(!configToggle)}
           >
             <div
               className={
@@ -76,6 +77,21 @@ const Navbar = () => {
               <FaUser width={"100%"} height={"100%"} color={"white"} />
             </div>
             <p className={"font-poppins font-medium text-sm"}>{name}</p>
+            {/* Toggle Action User Navbar Start*/}
+            <div
+              className={`${
+                configToggle ? "flex" : "hidden"
+              } absolute -bottom-16 rounded-2xl py-1 px-2 w-full outline outline-1 bg-white outline-green-600 right-0 flex-col font-poppins`}
+            >
+              <NavLink to={"/"}>Akun Saya</NavLink>
+              <button
+                className={"w-fit text-red-600"}
+                onClick={() => handleLogout()}
+              >
+                Logout
+              </button>
+            </div>
+            {/* Toggle Action User Navbar End*/}
           </div>
         )}
 
@@ -129,7 +145,7 @@ const Navbar = () => {
                 className={
                   "py-2 px-4 outline outline-2 outline-black rounded-2xl flex gap-2 items-center"
                 }
-                onClick={() => setMobileToggle(!mobileToggle)}
+                onClick={() => setConfigToggle(!configToggle)}
               >
                 <p className={"font-poppins font-medium text-md flex"}>
                   {name}
@@ -138,7 +154,7 @@ const Navbar = () => {
               </div>
             </div>
           )}
-          {mobileToggle ? (
+          {configToggle ? (
             <ul
               className={
                 "text-center flex flex-col gap-2 my-3 font-poppins text-md font-medium"

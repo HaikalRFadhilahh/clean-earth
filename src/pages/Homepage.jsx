@@ -71,7 +71,7 @@ const Homepage = () => {
       {/* Block Code Of  Tentang Kami Start*/}
       <section
         className={
-          "container mx-auto h-fit overflow-x-hidden flex flex-col py-15 lg:py-5 mg:px-10 lg:px-20 px-5"
+          "container mx-auto h-fit overflow-x-hidden flex flex-col py-20 lg:py-5 mg:px-10 lg:px-20 px-5"
         }
       >
         <h2 className={"font-poppins text-2xl text-center font-semibold"}>
