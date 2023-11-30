@@ -1,15 +1,28 @@
 import { useState } from "react";
 import Logo from "../assets/img/Logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { IoMdMenu } from "react-icons/io";
 import { FaUser } from "react-icons/fa6";
-import { nama } from "../store";
+import { nama, token } from "../store";
 import { useRecoilState } from "recoil";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useRecoilState(nama);
+  const [tokenJWT, setTokenJWT] = useRecoilState(token);
+  const [mobileToggle, setMobileToggle] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setName(undefined);
+    setTokenJWT(undefined);
+    setMobileToggle(false);
+    setOpen(false);
+    navigate("/");
+  };
+
   return (
     <nav className='bg-white w-screen'>
       <div className='flex items-center justify-between md:px-3 lg:px-7'>
@@ -68,7 +81,7 @@ const Navbar = () => {
 
         {/* Mobile navbar */}
         <ul
-          className={`md:hidden flex flex-col items-center  bg-white absolute w-full h-full bottom-0 py-24 pl-4 duration-500 ${
+          className={`md:hidden flex flex-col items-center  bg-white fixed w-full h-full bottom-0 py-24 pl-4 duration-500 ${
             open ? "left-0" : "left-[-100%]"
           }`}
         >
@@ -90,25 +103,60 @@ const Navbar = () => {
               Komunitas
             </NavLink>
           </li>
-          <div className={"flex md:hidden gap-3 py-3"}>
-            <NavLink to={"/daftar"}>
-              <Button
-                className='outline outline-2 bg-[#B0D9B1] outline-black '
-                type='submit'
-              >
-                Daftar
-              </Button>
-            </NavLink>
+          {name == undefined ? (
+            <div className={"flex md:hidden gap-3 py-3"}>
+              <NavLink to={"/daftar"}>
+                <Button
+                  className='outline outline-2 bg-[#B0D9B1] outline-black '
+                  type='submit'
+                >
+                  Daftar
+                </Button>
+              </NavLink>
 
-            <NavLink to={"/masuk"}>
-              <Button
-                className='bg-[#F6F6F6] outline outline-2 outline-black'
-                type='submit'
+              <NavLink to={"/masuk"}>
+                <Button
+                  className='bg-[#F6F6F6] outline outline-2 outline-black'
+                  type='submit'
+                >
+                  Masuk
+                </Button>
+              </NavLink>
+            </div>
+          ) : (
+            <div>
+              <div
+                className={
+                  "py-2 px-4 outline outline-2 outline-black rounded-2xl flex gap-2 items-center"
+                }
+                onClick={() => setMobileToggle(!mobileToggle)}
               >
-                Masuk
-              </Button>
-            </NavLink>
-          </div>
+                <p className={"font-poppins font-medium text-md flex"}>
+                  {name}
+                </p>
+                <IoMdArrowDropdown size={24} />
+              </div>
+            </div>
+          )}
+          {mobileToggle ? (
+            <ul
+              className={
+                "text-center flex flex-col gap-2 my-3 font-poppins text-md font-medium"
+              }
+            >
+              <li>
+                <NavLink to={"/"}>Pengaturan Akun</NavLink>
+              </li>
+              <li
+                className={"text-red-600 cursor-pointer"}
+                onClick={() => handleLogout()}
+              >
+                Logout
+              </li>
+            </ul>
+          ) : (
+            <></>
+          )}
         </ul>
       </div>
     </nav>
