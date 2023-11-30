@@ -1,90 +1,162 @@
-import React, { useState } from 'react'
-import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
-import BannerLogin from "../assets/login/imgLogin.png";
+import ImgBanner from "../assets/login/imgLogin.png";
+import AuthInput from "../components/AuthInput";
+import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { token, nama } from "../store";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import Button from "../components/Button";
+import Loading from "../components/Loading";
+import axios from "axios";
+import { NavLink, useNavigate } from "react-router-dom";
+import Guest from "../middleware/Guest";
 
 const Loginpage = () => {
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [credentials, setCredentials] = useState({});
+  const [tokenJWT, setTokenJWT] = useRecoilState(token);
+  const [loading, setLoading] = useState(false);
+  const [name, setName] = useRecoilState(nama);
   const navigate = useNavigate();
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+  const loginAction = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_SERVICE}/users/login`,
+        {
+          email: credentials.email,
+          password: credentials.password,
+        },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json;charset=UTF-8",
+          },
+        }
+      );
+
+      setLoading(false);
+      withReactContent(Swal).fire({
+        icon: "success",
+        title: "Berhasil",
+        text: "Login Berhasil",
+      });
+      setTokenJWT(res.data.token);
+      const result = await axios.post(
+        `${import.meta.env.VITE_API_SERVICE}/users/validate`,
+        {},
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json;charset=UTF-8",
+            Authorization: res.data.token,
+          },
+        }
+      );
+      setName(result.data.data.nama);
+      navigate("/");
+    } catch (error) {
+      setLoading(false);
+      if (error.response.status == 400) {
+        withReactContent(Swal).fire({
+          icon: "error",
+          title: "Validation Error",
+          text: error.response.data.message[0].message,
+        });
+      } else if (error.response.status == 403) {
+        withReactContent(Swal).fire({
+          icon: "error",
+          title: "Forbidden",
+          text: error.response.data.message,
+        });
+      }
+    }
   };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleLogin = async (e) => {
-   e.preventDefault();
-   
-   try {
-     console.log('Starting login...');
-     const response = await axios.post('http://localhost:3001/login', {
-       username,
-       password,
-     });
- 
-     const token = response.data.token;
-     localStorage.setItem('token', token);
-     console.log('Login successful!');
-
-     navigate('/');
-   } catch (error) {
-      window.alert('Username atau password salah !')
-      console.error('Login failed:', error.response.data);
-   }
- };
- 
 
   return (
-    <div className='w-full flex bg-[#B0D9B1]'>
-      <div className='md:w-1/2 h-screen bg-cover bg-right' style={{backgroundImage: `url(${BannerLogin})`}}></div>
-      
-      <div className='w-full md:w-1/2 flex justify-center items-center'>
-         <form onSubmit={handleLogin} className='bg-white w-4/5 h-5/6 rounded-3xl p-12 font-poppins'>
-            <h1 className='text-5xl font-medium mt-8 mb-16'>
-               Masuk
-            </h1>
-            <div className='flex flex-col'>
-               <label className='mb-4'>Username</label>
-               <input 
-                  type="text" 
-                  value={username} 
-                  onChange={handleUsernameChange} 
-                  placeholder='Username'
-                  className='outline outline-[#ADADAD] p-4 rounded-xl text-black'
-               />
-
-               <label className='mt-8 mb-4'>Password</label>
-               <input 
-                  type="password" 
-                  value={password} 
-                  onChange={handlePasswordChange} 
-                  placeholder='Password'
-                  className='outline outline-[#ADADAD] p-4 rounded-xl text-black'
-               />
-
-               <div className='flex justify-between mt-8 mx-4'>
-                  <div>
-                     <p>Tidak punya Akun ?</p>
-                     <Link to="/daftar" className='text-[#4285F4]'>Daftar</Link>
-                  </div>
-                  <Link to="/" className='text-[#4285F4]'>Lupa Password</Link>
-               </div>
-
-               <div className='flex justify-center'>
-                  <button type='submit' className='mt-12 px-5 py-2 rounded-md bg-[#B0D9B1]'>
-                     Masuk
-                  </button>
-               </div>
+    <Guest>
+      <div
+        className={
+          "w-screen min-h-screen overflow-x-hidden bg-[#D0E7D2] flex flex-wrap"
+        }
+      >
+        {/* Loading Sign */}
+        <Loading show={loading} />
+        {/* Loading Sign */}
+        {/* Image For Desktop Only */}
+        <div className={"hidden lg:flex lg:w-1/2 h-screen"}>
+          <img
+            src={ImgBanner}
+            alt='Banner Image'
+            className={"object-cover backdrop-brightness-110"}
+          />
+        </div>
+        {/* Form Section */}
+        <div className={"w-screen lg:w-1/2 py-7 lg:py-0"}>
+          <div className='container mx-auto h-full flex justify-center items-center flex-col px-3 lg:px-0'>
+            <div
+              className={
+                "bg-white py-7 px-5 rounded-lg w-full lg:w-3/4 flex flex-col gap-7"
+              }
+            >
+              <h2 className={"text-5xl font-poppins font-medium"}>Masuk</h2>
+              <form
+                action='POST'
+                className={"flex flex-col gap-3"}
+                onSubmit={loginAction}
+              >
+                <div className={"flex flex-col gap-2"}>
+                  <label htmlFor='email' className={"font-poppins text-md"}>
+                    Masukkan Email Anda
+                  </label>
+                  <AuthInput
+                    name='email'
+                    placeholder='Masukkan Email Anda'
+                    onChange={(e) =>
+                      setCredentials({ ...credentials, email: e.target.value })
+                    }
+                    // type='email'
+                  />
+                </div>
+                <div className={"flex flex-col gap-2"}>
+                  <label htmlFor='password' className={"font-poppins text-md"}>
+                    Masukkan Password Anda
+                  </label>
+                  <AuthInput
+                    name='password'
+                    type='password'
+                    placeholder='Masukkan Email Anda'
+                    onChange={(e) =>
+                      setCredentials({
+                        ...credentials,
+                        password: e.target.value,
+                      })
+                    }
+                  />
+                </div>
+                <Button
+                  className='w-fit h-fit py-3 px-2 bg-[#B0D9B1] outline outline-1 outline-black mx-auto'
+                  type='submit'
+                >
+                  Masuk
+                </Button>
+              </form>
+              <p className={"font-poppins text-center"}>
+                Belum Punya Akun? &nbsp;
+                <NavLink
+                  className={"text-blue-400 hover:text-blue-500"}
+                  to={"/daftar"}
+                >
+                  Daftar Disini
+                </NavLink>
+              </p>
             </div>
-         </form>
+          </div>
+        </div>
       </div>
-    </div>
-  )
-}
+    </Guest>
+  );
+};
 
-export default Loginpage
+export default Loginpage;
