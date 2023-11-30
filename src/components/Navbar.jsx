@@ -1,18 +1,15 @@
 import { useState } from "react";
 import Logo from "../assets/img/Logo.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import { IoMdMenu } from "react-icons/io";
+import { FaUser } from "react-icons/fa6";
+import { nama } from "../store";
+import { useRecoilState } from "recoil";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/');
-  };
-
+  const [name, setName] = useRecoilState(nama);
   return (
     <nav className='bg-white w-screen'>
       <div className='flex items-center justify-between md:px-3 lg:px-7'>
@@ -29,24 +26,45 @@ const Navbar = () => {
         <ul
           className={"hidden md:flex gap-7 font-light font-poppins text-base"}
         >
-          <li><a href="/">Beranda</a></li>
-          <li><a href="/edukasi">Edukasi</a></li>
+          <li>
+            <a href='/'>Beranda</a>
+          </li>
+          <li>
+            <a href='/edukasi'>Edukasi</a>
+          </li>
           <li>Komunitas</li>
         </ul>
-        <div className={"hidden md:flex gap-3"}>
-          <Button
-            className='outline outline-2 bg-[#B0D9B1] outline-black '
-            type='submit'
+        {name == undefined ? (
+          <div className={"hidden md:flex gap-3"}>
+            <Button
+              className='outline outline-2 bg-[#B0D9B1] outline-black '
+              type='submit'
+            >
+              <NavLink to='daftar'>Daftar</NavLink>
+            </Button>
+            <Button
+              className='bg-[#F6F6F6] outline outline-2 outline-black'
+              type='submit'
+            >
+              <NavLink to='masuk'>Masuk</NavLink>
+            </Button>
+          </div>
+        ) : (
+          <div
+            className={
+              "hidden md:flex px-2 rounded-2xl py-1 outline outline-2 outline-black gap-2 items-center"
+            }
           >
-            <NavLink to="daftar">Daftar</NavLink>
-          </Button>
-          <Button
-            className='bg-[#F6F6F6] outline outline-2 outline-black'
-            type='submit'
-          >
-            <NavLink to="masuk">Masuk</NavLink>
-          </Button>
-        </div>
+            <div
+              className={
+                "w-8 aspect-square rounded-full bg-green-700 flex justify-center items-center"
+              }
+            >
+              <FaUser width={"100%"} height={"100%"} color={"white"} />
+            </div>
+            <p className={"font-poppins font-medium text-sm"}>{name}</p>
+          </div>
+        )}
 
         {/* Mobile navbar */}
         <ul
@@ -60,7 +78,10 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/' className='py-7 px-3 inline-block font-medium'>
+            <NavLink
+              to='/edukasi'
+              className='py-7 px-3 inline-block font-medium'
+            >
               Edukasi
             </NavLink>
           </li>
@@ -70,18 +91,23 @@ const Navbar = () => {
             </NavLink>
           </li>
           <div className={"flex md:hidden gap-3 py-3"}>
-            <Button
-              className='outline outline-2 bg-[#B0D9B1] outline-black '
-              type='submit'
-            >
-              Daftar
-            </Button>
-            <Button
-              className='bg-[#F6F6F6] outline outline-2 outline-black'
-              type='submit'
-            >
-              Masuk
-            </Button>
+            <NavLink to={"/daftar"}>
+              <Button
+                className='outline outline-2 bg-[#B0D9B1] outline-black '
+                type='submit'
+              >
+                Daftar
+              </Button>
+            </NavLink>
+
+            <NavLink to={"/masuk"}>
+              <Button
+                className='bg-[#F6F6F6] outline outline-2 outline-black'
+                type='submit'
+              >
+                Masuk
+              </Button>
+            </NavLink>
           </div>
         </ul>
       </div>

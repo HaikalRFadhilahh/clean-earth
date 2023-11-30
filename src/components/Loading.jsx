@@ -1,7 +1,7 @@
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Loading = (props) => {
-  const { show = true } = props;
+  const { show = false } = props;
   return (
     <div
       className={`${
