@@ -6,6 +6,7 @@ import Edukasipage from "./pages/Edukasipage";
 import Loginpage from "./pages/Loginpage";
 import Registerpage from "./pages/Registerpage";
 import TestJWT from "./pages/TestJWT";
+import Komunitaspage from "./pages/Komunitaspage";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path='/edukasi' element={<Edukasipage />} />
         <Route path='/masuk' element={<Loginpage />} />
         <Route path='/daftar' element={<Registerpage />} />
+        <Route path='/komunitas' element={<Komunitaspage />} />
         <Route path='/test' element={<TestJWT />} />
       </Routes>
     </BrowserRouter>
