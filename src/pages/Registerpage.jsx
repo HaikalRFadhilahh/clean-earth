@@ -51,7 +51,7 @@ const RegistrationPage = () => {
       <div className='md:w-1/2 h-screen bg-cover bg-right' style={{backgroundImage: `url(${BannerLogin})`}}></div>
       
       <div className='w-full md:w-1/2 flex justify-center items-center'>
-        <form onSubmit={handleRegister} className='bg-white w-4/5 h-5/6 rounded-3xl p-12 font-poppins'>
+        <form onSubmit={handleRegister} className='bg-white w-4/5 h-[40rem] rounded-3xl p-12 font-poppins'>
             <h1 className='text-5xl font-medium mb-10'>
               Daftar
             </h1>

@@ -2,10 +2,18 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AuthChecker from "./auth/AuthChecker";
-import Homepage from "./pages/Homepage";
-import Edukasipage from "./pages/Edukasipage";
-import Loginpage from "./pages/Loginpage";
-import Registerpage from "./pages/Registerpage";
+import { DashboardLayout } from "./layout";
+import {
+  Nasabah,
+  SetorSampah,
+  Postingan,
+  Pengaturan,
+  Homepage,
+  Edukasipage,
+  Loginpage,
+  Registerpage,
+  Dashboard,
+} from "./pages/";
 
 const App = () => {
   return (
@@ -22,6 +30,14 @@ const App = () => {
         />
         <Route path="/masuk" element={<Loginpage />} />
         <Route path="/daftar" element={<Registerpage />} />
+
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="nasabah" element={<Nasabah />} />
+          <Route path="setorsampah" element={<SetorSampah />} />
+          <Route path="postingan" element={<Postingan />} />
+          <Route path="pengaturan" element={<Pengaturan />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

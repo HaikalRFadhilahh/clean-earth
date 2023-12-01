@@ -35,13 +35,13 @@ const Navbar = () => {
         </ul>
         <div className={"hidden md:flex gap-3"}>
           <Button
-            className='outline outline-2 bg-[#B0D9B1] outline-black '
+            className=' bg-[#B0D9B1]'
             type='submit'
           >
             <NavLink to="daftar">Daftar</NavLink>
           </Button>
           <Button
-            className='bg-[#F6F6F6] outline outline-2 outline-black'
+            className='bg-[#F6F6F6]'
             type='submit'
           >
             <NavLink to="masuk">Masuk</NavLink>
@@ -71,13 +71,13 @@ const Navbar = () => {
           </li>
           <div className={"flex md:hidden gap-3 py-3"}>
             <Button
-              className='outline outline-2 bg-[#B0D9B1] outline-black '
+              className='outline outline-2 bg-[#B0D9B1] '
               type='submit'
             >
               Daftar
             </Button>
             <Button
-              className='bg-[#F6F6F6] outline outline-2 outline-black'
+              className='bg-[#F6F6F6] outline outline-2 '
               type='submit'
             >
               Masuk
