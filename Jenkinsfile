@@ -42,7 +42,7 @@ pipeline {
         stage ('building docker images') {
             steps {
                 dir(WORKSPACE_LOCATION) {
-                    sh 'docker build -t cleanearth:latest .'
+                    sh 'docker build -t cleanearth:latest --no-cache .'
                     sh 'docker image prune -f'
                 }
             }
