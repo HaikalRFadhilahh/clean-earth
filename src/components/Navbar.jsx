@@ -46,7 +46,7 @@ const Navbar = () => {
             <a href='/edukasi'>Edukasi</a>
           </li>
           <li>
-            <a href="/">Komunitas</a>
+            <a href='/'>Komunitas</a>
           </li>
         </ul>
         {name == undefined ? (
@@ -121,7 +121,7 @@ const Navbar = () => {
               Komunitas
             </NavLink>
           </li>
-          <div className={"flex md:hidden gap-3 py-3"}>
+          {/* <div className={"flex md:hidden gap-3 py-3"}>
             <Button
               className='outline outline-2 bg-[#B0D9B1] '
               type='submit'
@@ -134,7 +134,7 @@ const Navbar = () => {
             >
               Masuk
             </Button>
-          </div>
+          </div> */}
           {name == undefined ? (
             <div className={"flex md:hidden gap-3 py-3"}>
               <NavLink to={"/daftar"}>
