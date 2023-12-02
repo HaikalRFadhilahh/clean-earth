@@ -46,7 +46,7 @@ const Navbar = () => {
             <a href='/edukasi'>Edukasi</a>
           </li>
           <li>
-            <a href='/'>Komunitas</a>
+            <a href="/">Komunitas</a>
           </li>
         </ul>
         {name == undefined ? (
