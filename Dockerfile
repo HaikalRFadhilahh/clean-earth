@@ -1,6 +1,7 @@
 FROM node:latest as build
 WORKDIR /var/www/html
 COPY . .
+RUN npm install -g npm@10.2.4
 RUN npm install
 RUN npm run build
 
