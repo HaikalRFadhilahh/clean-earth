@@ -46,6 +46,9 @@ pipeline {
                     sh 'docker image prune -f'
                 }
             }
+            options {
+                timeout(time: 1, unit: 'HOURS')
+            }
         }
 
         stage ('running docker container') {
@@ -55,9 +58,5 @@ pipeline {
                 }
             }
         }
-    }
-
-    options {
-        timeout(time: 1,unit: 'HOURS')
     }
 }
