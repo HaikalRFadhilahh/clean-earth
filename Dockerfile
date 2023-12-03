@@ -1,6 +1,7 @@
 FROM node:hydrogen-alpine3.18 as build
 WORKDIR /var/www/html
 COPY . .
+ENV VITE_API_SERVICE=https://api.haik.my.id
 RUN npm install
 RUN npm run build
 

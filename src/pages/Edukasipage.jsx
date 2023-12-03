@@ -26,10 +26,7 @@ const Edukasipage = () => {
           }}
           className=' mx-auto py-16 flex justify-center gap-8 mb-16'
         >
-          <div
-            div
-            className='w-1/2 py-10 flex flex-col justify-center text-white'
-          >
+          <div className='w-1/2 py-10 flex flex-col justify-center text-white'>
             <div className='px-2 text-center'>
               <h1 className='text-4xl font-bold font-poppins'>
                 Apa yang ingin kamu ketahui ?
@@ -95,7 +92,6 @@ const Edukasipage = () => {
                   className='w-full aspect-video rounded-xl'
                   src='https://www.youtube.com/embed/i0bb7Et0ots'
                   title='Sejauh Mana Masalah Sampah di Indonesia?'
-                  frameborder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowfullscreen
                 ></iframe>
@@ -123,7 +119,6 @@ const Edukasipage = () => {
                   className='w-full aspect-video rounded-xl'
                   src='https://www.youtube.com/embed/cjY-9U-YF4o'
                   title='3 Ide Daur Ulang dari Barang Bekas yang Sangat Bermanfaat'
-                  frameborder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowfullscreen
                 ></iframe>
@@ -133,7 +128,6 @@ const Edukasipage = () => {
                   className='w-full aspect-video rounded-xl'
                   src='https://www.youtube.com/embed/EPoDzLTlmyY'
                   title='3 Ide Daur Ulang Sedotan Plastik | Ide Kreatif Sedotan Plastik Bekas'
-                  frameborder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowfullscreen
                 ></iframe>
@@ -143,7 +137,6 @@ const Edukasipage = () => {
                   className='w-full aspect-video rounded-xl'
                   src='https://www.youtube.com/embed/ogE3n_KdYfg?list=PL5aQ2PMwUcmvQrmm9CdS1MWkODBlt7Qmh'
                   title='Ide Kreatif dari Gelas Plastik Bekas  || Ide yang Tak terpikirkan dari Gelas Plastik Minuman'
-                  frameborder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowfullscreen
                 ></iframe>
@@ -153,7 +146,6 @@ const Edukasipage = () => {
                   className='w-full aspect-video rounded-xl'
                   src='https://www.youtube.com/embed/FrxrhaYsVWs'
                   title='Cara membuat Topi Karnaval Dari Kertas Bentuk Kerucut / Hiasan 17 Agustus'
-                  frameborder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowfullscreen
                 ></iframe>
@@ -163,7 +155,6 @@ const Edukasipage = () => {
                   className='w-full aspect-video rounded-xl'
                   src='https://www.youtube.com/embed/MJd3bo_XRaU'
                   title='Daur ulang sampah plastik bungkus snack menjadi tempat pensil || Recycle from plastic snack'
-                  frameborder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowfullscreen
                 ></iframe>
@@ -173,7 +164,6 @@ const Edukasipage = () => {
                   className='w-full aspect-video rounded-xl'
                   src='https://www.youtube.com/embed/yT-ntEUJq40'
                   title='ECOBRICK Sampah Plastik : Apa Itu Ecobric &amp; Cara Membuatnya (Gaya Hidup Berkelanjutan) Projek P5'
-                  frameborder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowfullscreen
                 ></iframe>

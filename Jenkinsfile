@@ -30,11 +30,10 @@ pipeline {
             } 
         }
 
-        stage ('Remove Docker Old Build') {
+        stage ('Remove Old Docker Images') {
             steps {
                 dir(WORKSPACE_LOCATION) {
                     sh 'docker rm cleanearth -f'
-                    sh 'docker rmi cleanearth:latest -f'
                 }
             }
         }

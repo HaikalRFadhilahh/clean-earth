@@ -9,7 +9,6 @@ const Auth = ({ children }) => {
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
   const statusAuth = useRecoilValueLoadable(getStatusAuth);
   useEffect(() => {
-    console.log(statusAuth.contents);
     if (statusAuth.contents == false) {
       setTokenJWT(undefined);
       navigate("/masuk");

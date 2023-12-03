@@ -9,3 +9,4 @@ dist
 manifest.json
 rsconnect/
 .Rproj.user
+.env
