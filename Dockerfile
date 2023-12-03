@@ -1,4 +1,4 @@
-FROM node:latest as build
+FROM node:hydrogen-alpine3.18 as build
 WORKDIR /var/www/html
 COPY . .
 RUN npm install
