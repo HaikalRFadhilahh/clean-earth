@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ImgProfile from "../../../assets/img/ProfileAdmin.png";
 
 import { IoPersonCircle } from "react-icons/io5";
 
@@ -34,8 +35,10 @@ function Header({ sidebarOpen, setSidebarOpen }) {
             </button>
           </div>
           <div className="flex border-2 border-black rounded-full p-2 lg:mr-14 sm:mr-0">
-            <IoPersonCircle color="#618264" className="w-8 h-6 mr-1" />
-            <h2 className="font-poppins font-bold lg:text-base sm:text-sm">Ndaru Windra Sayidinaa</h2>
+            <img src={ImgProfile} alt="" className="w-6 h-6 mr-2" />
+            <h2 className="font-poppins font-bold lg:text-base sm:text-sm">
+              Ndaru Windra Sayidinaa
+            </h2>
           </div>
         </div>
       </div>

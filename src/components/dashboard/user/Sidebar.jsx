@@ -2,13 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 import { IoMdHome } from "react-icons/io";
-import { FaTrashRestoreAlt } from "react-icons/fa";
-import { IoMdPerson } from "react-icons/io";
-import { BsFillPostcardFill } from "react-icons/bs";
-import { IoMdSettings } from "react-icons/io";
-import { ImExit } from "react-icons/im";
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { GrTransaction } from "react-icons/gr";
+import { RxExit } from "react-icons/rx";
 
-import Logo from "../assets/img/Logo.png";
+import Logo from "../../../assets/img/Logo.png";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const trigger = useRef(null);
@@ -74,14 +72,14 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       >
         {/* Sidebar header */}
         <div className="flex justify-between pr-3 sm:px-2">
-          {/* Close button */}   
+          {/* Close button */}
           <button
             ref={trigger}
             className="lg:hidden text-slate-500 hover:text-slate-400"
             onClick={() => setSidebarOpen(!sidebarOpen)}
             aria-controls="sidebar"
             aria-expanded={sidebarOpen}
-          > 
+          >
             <span className="sr-only">Close sidebar</span>
             <svg
               className="w-6 h-6 fill-current"
@@ -93,7 +91,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </button>
         </div>
 
-        <NavLink to="/dashboard">
+        <NavLink to="/profile">
           <div className="flex justify-center mt-5">
             <img src={Logo} alt="" width="100" height="100" />
           </div>
@@ -102,7 +100,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               "text-xl font-bold font-poppins text-center text-white lg:text-xl mt-5"
             }
           >
-            Admin Dashboard
+            Dashboard User
           </h2>
         </NavLink>
 
@@ -125,7 +123,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <ul className="flex flex-col justify-between h-full gap-5 mt-5 ">
                 <NavLink
                   className={`block text-slate-200 truncate transition duration-150`}
-                  to="/dashboard"
+                  to="/profile"
                 >
                   <div className="flex items-center justify-between group">
                     <div className="flex items-center ">
@@ -139,13 +137,13 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
                 <NavLink
                   className={`block text-slate-200 truncate transition duration-150`}
-                  to="/dashboard/nasabah"
+                  to="/profile/transaksi"
                 >
                   <div className="flex items-center justify-between group">
                     <div className="flex items-center ">
-                      <IoMdPerson className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
+                      <GrTransaction className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
                       <span className=" font-poppins text-base font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
-                        Nasabah{" "}
+                        Transaksi{" "}
                       </span>
                     </div>
                   </div>
@@ -153,13 +151,13 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
                 <NavLink
                   className={`block text-slate-200 truncate transition duration-150`}
-                  to="/dashboard/setorsampah"
+                  to="/profile/akunsaya"
                 >
                   <div className="flex items-center justify-between group ">
                     <div className="flex items-center ">
-                      <FaTrashRestoreAlt className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
+                      <IoPersonCircleOutline  className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
                       <span className=" font-poppins text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
-                        Setor Sampah{" "}
+                        Akun Saya{" "}
                       </span>
                     </div>
                   </div>
@@ -167,40 +165,12 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
                 <NavLink
                   className={`block text-slate-200 truncate transition duration-150`}
-                  to="/dashboard/postingan"
-                >
-                  <div className="flex items-center justify-between group">
-                    <div className="flex items-center">
-                      <BsFillPostcardFill className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
-                      <span className=" font-poppins text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
-                        Postingan{" "}
-                      </span>
-                    </div>
-                  </div>
-                </NavLink>
-
-                <NavLink
-                  className={`block text-slate-200 truncate transition duration-150`}
-                  to="/dashboard/pengaturan"
-                >
-                  <div className="flex items-center justify-between group">
-                    <div className="flex items-center">
-                      <IoMdSettings className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
-                      <span className=" font-poppins text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
-                        Pengaturan{" "}
-                      </span>
-                    </div>
-                  </div>
-                </NavLink>
-
-                <NavLink
-                  className={`block text-slate-200 truncate transition duration-150 mt-24`}
                   to="/"
                 >
-                  <div className="flex items-center justify-between group">
+                  <div className="flex items-center justify-between group mt-40">
                     <div className="flex items-center">
-                      <ImExit className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
-                      <span className=" font-poppins text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200   :text-green-500">
+                      <RxExit  className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
+                      <span className=" font-poppins text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
                         Keluar{" "}
                       </span>
                     </div>
@@ -230,7 +200,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
         </div>
       </div>
-    </div> 
+    </div>
   );
 }
 

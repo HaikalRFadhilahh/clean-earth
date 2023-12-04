@@ -1,16 +1,25 @@
 // App.js
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { DashboardLayout } from "./layout";
+import { DashboardAdminLayout } from "./layout";
+import { DashboardUserLayout } from "./layout";
+
 import {
   Nasabah,
   SetorSampah,
   Postingan,
-  Pengaturan,
+  PengaturanAdmin,
   Homepage,
   Edukasipage,
   Loginpage,
   Registerpage,
-  Dashboard,
+  DashboardAdmin,
+  DashboardUser,
+  AkunSaya,
+  Transaksi,
+  PengaturanBiodataUser,
+  PengaturanKatasandiUser,
+  PengaturanBiodataAdmin,
+  PengaturanKatasandiAdmin,
 } from "./pages/";
 import TestJWT from "./pages/TestJWT";
 
@@ -18,17 +27,26 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Homepage />} />
-        <Route path='/edukasi' element={<Edukasipage />} />
-        <Route path='/masuk' element={<Loginpage />} />
-        <Route path='/daftar' element={<Registerpage />} />
-        <Route path='/test' element={<TestJWT />} />
-        <Route path='/dashboard' element={<DashboardLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path='nasabah' element={<Nasabah />} />
-          <Route path='setorsampah' element={<SetorSampah />} />
-          <Route path='postingan' element={<Postingan />} />
-          <Route path='pengaturan' element={<Pengaturan />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/edukasi" element={<Edukasipage />} />
+        <Route path="/masuk" element={<Loginpage />} />
+        <Route path="/daftar" element={<Registerpage />} />
+        <Route path="/test" element={<TestJWT />} />
+        <Route path="/dashboard" element={<DashboardAdminLayout />}>
+          <Route index element={<DashboardAdmin />} />
+          <Route path="nasabah" element={<Nasabah />} />
+          <Route path="setorsampah" element={<SetorSampah />} />
+          <Route path="postingan" element={<Postingan />} />
+          <Route path="pengaturan" element={<PengaturanAdmin />} />
+          <Route path="biodata" element={<PengaturanBiodataAdmin />} />
+          <Route path="katasandi" element={<PengaturanKatasandiAdmin />} />
+        </Route>
+        <Route path="/profile" element={<DashboardUserLayout />}>
+          <Route index element={<DashboardUser />} />
+          <Route path="transaksi" element={<Transaksi />} />
+          <Route path="akunsaya" element={<AkunSaya />} />
+          <Route path="pengaturanbiodata" element={<PengaturanBiodataUser />} />
+          <Route path="pengaturankatasandi" element={<PengaturanKatasandiUser />} />
         </Route>
       </Routes>
     </BrowserRouter>

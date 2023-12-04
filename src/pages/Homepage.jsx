@@ -17,7 +17,7 @@ const Homepage = () => {
   return (
     <div className={"overflow-x-hidden"}>
       <Navbar />
-      <section className='container mx-auto px-3 md:px-0 flex flex-wrap'>
+      <section className="container mx-auto px-3 md:px-0 flex flex-wrap">
         {/* Block For Text Banner Section */}
         <div
           className={
@@ -42,8 +42,8 @@ const Homepage = () => {
               dalam menjaga bumi kita tetap hijau dan sehat{" "}
             </p>
             <Button
-              type='submit'
-              className='bg-[#618264] outline-2 text-white outline '
+              type="submit"
+              className="bg-[#618264] outline-2 text-white outline "
             >
               Gabung Yuk
             </Button>
@@ -61,7 +61,7 @@ const Homepage = () => {
           >
             <img
               src={LogoWelcomebanner}
-              alt=''
+              alt=""
               className={"bg-center bg-cover"}
             />
           </div>
@@ -77,7 +77,7 @@ const Homepage = () => {
         <h2 className={"font-poppins text-2xl text-center font-semibold"}>
           Tentang Kami
         </h2>
-        <DotAccesnt count='3' className='mx-auto' />
+        <DotAccesnt count="3" className="mx-auto" />
         <div
           className={
             "container mx-auto bg-[#F9F8F8] my-2 lg:py-10 lg:px-16 rounded-lg shadow-lg h-fit py-3 px-2"
@@ -104,19 +104,19 @@ const Homepage = () => {
         <h2 className={"font-poppins text-2xl text-center font-semibold"}>
           Fitur Utama
         </h2>
-        <DotAccesnt count='3' className='mx-auto' />
+        <DotAccesnt count="3" className="mx-auto" />
         <div
           className={"flex justify-center flex-wrap w-full gap-x-32 gap-y-5"}
         >
           <CardFitur
             gambar={Iconedukasi}
-            judul='edukasi'
-            deskripsi='Menampilkan segala informasi mengenai pengelolaan sampah'
+            judul="edukasi"
+            deskripsi="Menampilkan segala informasi mengenai pengelolaan sampah"
           />
           <CardFitur
             gambar={Iconkomunitas}
-            judul='komunitas'
-            deskripsi='kamu bisa berinteraksi dan berbagi pengalaman terkait dengan pengelolaan sampah'
+            judul="komunitas"
+            deskripsi="kamu bisa berinteraksi dan berbagi pengalaman terkait dengan pengelolaan sampah"
           />
         </div>
       </section>
@@ -130,7 +130,7 @@ const Homepage = () => {
         <h2 className={"font-poppins text-2xl text-center font-semibold"}>
           Galeri Kami
         </h2>
-        <DotAccesnt count='3' className='mx-auto' />
+        <DotAccesnt count="3" className="mx-auto" />
         <div className={"flex flex-wrap justify-center gap-x-6 gap-y-4"}>
           <BoxGallery gambar={Prosespembuatan1} />
           <BoxGallery gambar={Prosespembuatan2} />
@@ -165,34 +165,34 @@ const Homepage = () => {
               membantu dan akan merespons secepat mungkin
             </p>
             <form
-              action='#'
+              action="#"
               method={"POST"}
               className={"flex flex-col gap-5 md:gap-2"}
             >
               <input
-                type='text'
+                type="text"
                 placeholder={"Nama"}
                 className={
                   "py-2 px-4 outline outline-[0.5px] outline-[#E0E0E0] placeholder:font-montserrat placeholder:font-light placeholder:text-sm"
                 }
               />
               <input
-                type='text'
+                type="text"
                 placeholder={"Email"}
                 className={
                   "py-2 px-4 outline outline-[0.5px] outline-[#E0E0E0] placeholder:font-montserrat placeholder:font-light placeholder:text-sm"
                 }
               />
               <input
-                type='text'
+                type="text"
                 placeholder={"Pesan"}
                 className={
                   "py-2 px-4 outline outline-[0.5px] outline-[#E0E0E0] placeholder:font-montserrat placeholder:font-light placeholder:text-sm"
                 }
               />
               <Button
-                type='submit'
-                className='w-full bg-[#618264] font-montserrat text-white font-bold'
+                type="submit"
+                className="w-full bg-[#618264] font-montserrat text-white font-bold"
               >
                 KIRIM
               </Button>
@@ -203,7 +203,7 @@ const Homepage = () => {
           <div className={"hidden md:flex md:w-[40%] h-full"}>
             <img
               src={ContactUs}
-              alt='Form Decoration Image'
+              alt="Form Decoration Image"
               className={"bg-center object-cover w-full h-full"}
             />
           </div>

@@ -1,3 +1,5 @@
-import DashboardLayout from "./DashboardLayout";
+import DashboardAdminLayout from "./DashboardAdminLayout";
+import DashboardUserLayout from "./DashboardUserLayout";
 
-export { DashboardLayout };
+
+export { DashboardAdminLayout, DashboardUserLayout };

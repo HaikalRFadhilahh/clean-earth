@@ -1,7 +1,7 @@
 import React from "react";
-import Chart from "../components/BarChart";
-import CardDashboard from "../components/CardDashboard";
-import WelcomeBanner from "../components/WelcomeBanner";
+import Chart from "../../../components/dashboard/admin/BarChart";
+import CardDashboard from "../../../components/dashboard/admin/CardDashboard";
+import WelcomeBanner from "../../../components/dashboard/admin/WelcomeBanner";
 
 const Dashboard = () => {
   return (
@@ -17,10 +17,10 @@ const Dashboard = () => {
           <WelcomeBanner />
         </div>
         <div>
-          <CardDashboard/>
+          <CardDashboard />
         </div>
         <div className="shadow-2xl border-2 shadow-black-600 p-4 rounded-3xl mx-10 mb-5">
-          <Chart/>
+          <Chart />
         </div>
       </main>
     </div>
