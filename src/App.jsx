@@ -20,6 +20,7 @@ import {
   PengaturanKatasandiUser,
   PengaturanBiodataAdmin,
   PengaturanKatasandiAdmin,
+  TambahNasabah, // Import komponen TambahNasabah
 } from "./pages/";
 import TestJWT from "./pages/TestJWT";
 
@@ -32,21 +33,24 @@ const App = () => {
         <Route path="/masuk" element={<Loginpage />} />
         <Route path="/daftar" element={<Registerpage />} />
         <Route path="/test" element={<TestJWT />} />
+
         <Route path="/dashboard" element={<DashboardAdminLayout />}>
-          <Route index element={<DashboardAdmin />} />
+          <Route index element={<DashboardAdmin/>} />
           <Route path="nasabah" element={<Nasabah />} />
           <Route path="setorsampah" element={<SetorSampah />} />
           <Route path="postingan" element={<Postingan />} />
           <Route path="pengaturan" element={<PengaturanAdmin />} />
           <Route path="biodata" element={<PengaturanBiodataAdmin />} />
           <Route path="katasandi" element={<PengaturanKatasandiAdmin />} />
+          <Route path="tambahnasabah" element={<TambahNasabah />} />
         </Route>
+
         <Route path="/profile" element={<DashboardUserLayout />}>
           <Route index element={<DashboardUser />} />
           <Route path="transaksi" element={<Transaksi />} />
           <Route path="akunsaya" element={<AkunSaya />} />
-          <Route path="pengaturanbiodata" element={<PengaturanBiodataUser />} />
           <Route path="pengaturankatasandi" element={<PengaturanKatasandiUser />} />
+          <Route path="pengaturanbiodata" element={<PengaturanBiodataUser />} />
         </Route>
       </Routes>
     </BrowserRouter>

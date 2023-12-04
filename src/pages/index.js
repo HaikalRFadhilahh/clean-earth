@@ -14,7 +14,7 @@ import AkunSaya from "./dashboard/user/AkunSaya";
 import Transaksi from "./dashboard/user/Transaksi";
 import PengaturanBiodataUser from "./dashboard/user/PengaturanBiodata";
 import PengaturanKatasandiUser from "./dashboard/user/PengaturanKatasandi";
-
+import TambahNasabah from "./TambahNasabah";
 
 export {
   Nasabah,
@@ -33,4 +33,5 @@ export {
   PengaturanKatasandiUser,
   PengaturanBiodataAdmin,
   PengaturanKatasandiAdmin,
+  TambahNasabah,
 };
