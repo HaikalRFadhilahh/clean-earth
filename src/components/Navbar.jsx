@@ -27,7 +27,7 @@ const Navbar = (props) => {
   return (
     <nav
       className={`w-screen ${
-        theme == "transparent" ? "absolute top-0" : "bg-white"
+        theme == "transparent" ? "absolute top-0 left-0" : "bg-white"
       }`}
     >
       <div className='flex items-center justify-between md:px-3 lg:px-7'>
@@ -48,9 +48,7 @@ const Navbar = (props) => {
         </div>
         {/* Navigation For Desktop */}
         <ul
-          className={`hidden md:flex gap-7 font-light font-poppins text-base ${
-            theme == "transparent" ? "text-white" : ""
-          }`}
+          className={`hidden md:flex gap-7 font-light font-poppins text-base`}
         >
           <li>
             <NavLink to={"/"}>Beranda</NavLink>
@@ -112,7 +110,7 @@ const Navbar = (props) => {
 
         {/* Mobile navbar */}
         <ul
-          className={`md:hidden flex flex-col items-center  bg-white fixed w-full h-full bottom-0 py-24 pl-4 duration-500 ${
+          className={`md:hidden flex flex-col items-center  bg-white fixed w-full h-full bottom-0 py-24 pl-4 duration-500 z-50 ${
             open ? "left-0" : "left-[-100%]"
           }`}
         >
