@@ -5,7 +5,6 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 const SetorSampah = () => {
-
   const [setorSampahData, setSetorSampahData] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
@@ -65,9 +64,11 @@ const SetorSampah = () => {
                   Nomor
                 </th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Waktu
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Nama
                 </th>
-                {/* Sesuaikan dengan kolom-kolom tabel setor_sampah yang ada */}
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Jenis Sampah
                 </th>
@@ -77,7 +78,6 @@ const SetorSampah = () => {
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Nominal
                 </th>
-                {/* ... */}
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Aksi
                 </th>
@@ -87,12 +87,11 @@ const SetorSampah = () => {
               {searchResults.map((setor, index) => (
                 <tr key={setor.id}>
                   <td className="px-6 py-4 whitespace-nowrap">{index + 1}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{new Date(setor.waktu).toLocaleDateString()}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{setor.nama}</td>
-                  {/* Sesuaikan dengan kolom-kolom tabel setor_sampah yang ada */}
                   <td className="px-6 py-4 whitespace-nowrap">{setor.jenis_sampah}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{setor.jumlah}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{setor.nominal}</td>
-                  {/* ... */}
                   <td className="px-6 py-4 whitespace-nowrap">
                     <Button
                       className='mr-2 bg-[#FFF383] text-black py-2 px-4 rounded'

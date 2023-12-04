@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const TambahNasabah = () => {
   const [formData, setFormData] = useState({
     nama: '',
-    no_telepon: '',
+    no_telpon: '',
     alamat: '',
   });
 
@@ -60,8 +60,8 @@ const TambahNasabah = () => {
             <label className="block text-sm font-medium text-gray-600">No Telepon:</label>
             <input
               type="text"
-              name="no_telepon"
-              value={formData.no_telepon}
+              name="no_telpon"
+              value={formData.no_telpon}
               onChange={handleChange}
               className="mt-1 p-2 w-full border rounded-md"
             />

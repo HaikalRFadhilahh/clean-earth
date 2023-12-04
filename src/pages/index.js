@@ -14,7 +14,7 @@ import AkunSaya from "./dashboard/user/AkunSaya";
 import Transaksi from "./dashboard/user/Transaksi";
 import PengaturanBiodataUser from "./dashboard/user/PengaturanBiodata";
 import PengaturanKatasandiUser from "./dashboard/user/PengaturanKatasandi";
-import TambahNasabah from "./TambahNasabah";
+import TambahNasabah from "./dashboard/admin/TambahNasabah";
 import EditNasabah from "./dashboard/admin/EditNasabah";
 import BacaArtikel from "./BacaArtikel"; 
 
