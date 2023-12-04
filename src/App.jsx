@@ -20,7 +20,9 @@ import {
   PengaturanKatasandiUser,
   PengaturanBiodataAdmin,
   PengaturanKatasandiAdmin,
-  TambahNasabah, // Import komponen TambahNasabah
+  TambahNasabah,
+  BacaArtikel,
+  EditNasabah,
 } from "./pages/";
 import TestJWT from "./pages/TestJWT";
 
@@ -30,6 +32,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/edukasi" element={<Edukasipage />} />
+        <Route path="/baca" element={<BacaArtikel />} />
         <Route path="/masuk" element={<Loginpage />} />
         <Route path="/daftar" element={<Registerpage />} />
         <Route path="/test" element={<TestJWT />} />
@@ -43,6 +46,7 @@ const App = () => {
           <Route path="biodata" element={<PengaturanBiodataAdmin />} />
           <Route path="katasandi" element={<PengaturanKatasandiAdmin />} />
           <Route path="tambahnasabah" element={<TambahNasabah />} />
+          <Route path="editnasabah" element={<EditNasabah />} />
         </Route>
 
         <Route path="/profile" element={<DashboardUserLayout />}>

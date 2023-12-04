@@ -12,6 +12,7 @@ import artikel5 from "../assets/edukasi/artikel5.png";
 import artikel6 from "../assets/edukasi/artikel6.png";
 import artikel7 from "../assets/edukasi/artikel7.png";
 import artikel8 from "../assets/edukasi/artikel8.png";
+import Footer from "../components/Footer";
 
 const Edukasipage = () => {
   return (
@@ -235,6 +236,8 @@ const Edukasipage = () => {
           </div>
         </section>
       </div>
+
+      <Footer />
     </Auth>
   );
 };

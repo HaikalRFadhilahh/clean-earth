@@ -15,7 +15,7 @@ const SetorSampah = () => {
 
   const fetchSetorSampahData = async () => {
     try {
-      const response = await fetch('http://localhost:3001/setor_sampah');
+      const response = await fetch('https://precious-battledress-ray.cyclic.app/setorsampah');
       const data = await response.json();
       setSetorSampahData(data);
       setSearchResults(data);

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import SearchDashboard from '../../../components/SearchDashboard';
 import Button from "../../../components/Button";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 const Nasabah = () => {
+  const navigate = useNavigate();
   const [nasabahData, setNasabahData] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
@@ -15,7 +16,7 @@ const Nasabah = () => {
 
   const fetchNasabahData = async () => {
     try {
-      const response = await fetch('http://localhost:3001/nasabah');
+      const response = await fetch('https://precious-battledress-ray.cyclic.app/nasabah');
       const data = await response.json();
       setNasabahData(data);
       setSearchResults(data);
@@ -34,6 +35,11 @@ const Nasabah = () => {
       setSearchResults(filteredResults);
     }
   };
+
+  const handleEdit = (id) => {
+    navigate(`/dashboard/editnasabah`);
+  };
+  
 
   return (
     <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">

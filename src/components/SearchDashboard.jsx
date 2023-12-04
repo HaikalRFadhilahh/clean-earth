@@ -18,7 +18,7 @@ const SearchDashboard = ({ onSearch }) => {
           type="text"
           name="search"
           id="search"
-          className="focus:ring-green-500 focus:border-green-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300 py-1 px-2"
+          className="focus:ring-green-500 focus:border-green-500 flex-1 block w-full rounded-md sm:text-sm border-none py-1 px-2"
           placeholder="Cari nasabah"
           value={searchTerm}
           onChange={handleSearch}
