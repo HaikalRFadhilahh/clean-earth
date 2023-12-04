@@ -20,6 +20,28 @@ const Komunitaspage = () => {
   const [ulasan, setUlasan] = useState({ bintang: 0 });
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
   const [loading, setLoading] = useState(false);
+  const [dataUlasan, setDataUlasan] = useState([]);
+  const [trigger, setTrigger] = useState(false);
+
+  useEffect(() => {
+    const getDataUlasan = async () => {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_SERVICE}/ulasan`,
+        {},
+        {
+          headers: {
+            Authorization: tokenJWT,
+            Accept: "application/json",
+            "Content-Type": "application/json;charset=UTF-8",
+          },
+        }
+      );
+
+      setDataUlasan(res.data.data);
+    };
+
+    getDataUlasan();
+  }, [setTrigger]);
 
   const handleSubmitUlasan = async (e) => {
     e.preventDefault();
@@ -54,6 +76,7 @@ const Komunitaspage = () => {
           text: "Berhasil Menambahkan Ulasan,Terima Kasih Telah Mengisi Ulasan!",
         });
         setUlasan({ ...ulasan, bintang: 0, ulasan: null });
+        setTrigger(!trigger);
       } catch (error) {
         setLoading(false);
         if (error.response.status == 409) {
