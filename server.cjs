@@ -98,6 +98,16 @@ app.get('/nasabah', async (req, res) => {
   }
 });
 
+app.get('/setor_sampah', async (req, res) => {
+  try {
+    const [rows] = await pool.query('SELECT * FROM setor_sampah');
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 app.listen(PORT, async () => {
   try {
     await pool.getConnection();

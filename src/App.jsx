@@ -11,6 +11,7 @@ import {
   Loginpage,
   Registerpage,
   Dashboard,
+  TambahNasabah, // Import komponen TambahNasabah
 } from "./pages/";
 import TestJWT from "./pages/TestJWT";
 
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='setorsampah' element={<SetorSampah />} />
           <Route path='postingan' element={<Postingan />} />
           <Route path='pengaturan' element={<Pengaturan />} />
+          <Route path='tambahnasabah' element={<TambahNasabah />} />
         </Route>
       </Routes>
     </BrowserRouter>

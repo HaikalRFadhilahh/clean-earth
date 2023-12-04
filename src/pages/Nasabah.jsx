@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import SearchDashboard from '../components/SearchDashboard';
 import Button from "../components/Button";
+import { NavLink } from "react-router-dom";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 const Nasabah = () => {
   const [nasabahData, setNasabahData] = useState([]);
@@ -37,17 +40,17 @@ const Nasabah = () => {
       <main>
         <div className="relative mx-4 sm:p-6 rounded-sm overflow-hidden">
           <h1 className="font-poppins p-4 rounded-lg text-2xl md:text-3xl bg-[#718977] text-white shadow-xl font-bold capitalize">
-            Dashboard
+            Nasabah
           </h1>
         </div>
         <div className='w-full flex justify-between p-4 sm:px-10'>
           <SearchDashboard onSearch={handleSearch} />
-          <Button
-            className='w-fit h-fit py-2 px-2 bg-[#B0D9B1] outline outline-1 outline-black '
-            type='submit'
+          <NavLink
+            className='w-fit h-fit px-5 py-2 rounded-md bg-[#B0D9B1] '
+            to='/dashboard/tambahnasabah'
           >
             Tambah
-          </Button>
+          </NavLink>
         </div>
         <div className="m-8">
           <h2 className="text-xl font-semibold border-b-2 px-2 py-4 bg-[#EFF3F0]">Daftar Nasabah</h2>
@@ -66,6 +69,9 @@ const Nasabah = () => {
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Alamat
                 </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Aksi
+                </th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -75,6 +81,20 @@ const Nasabah = () => {
                   <td className="px-6 py-4 whitespace-nowrap">{nasabah.nama}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{nasabah.no_telpon}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{nasabah.alamat}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <Button
+                      className='mr-2 bg-[#FFF383] text-black py-2 px-4 rounded'
+                      onClick={() => handleEdit(nasabah.id)}
+                    >
+                      <FaEdit/>
+                    </Button>
+                    <Button
+                      className='bg-[#EE5252] text-black py-2 px-4 rounded'
+                      onClick={() => handleDelete(nasabah.id)}
+                    >
+                      <MdDelete/>
+                    </Button>
+                  </td>
                 </tr>
               ))}
             </tbody>

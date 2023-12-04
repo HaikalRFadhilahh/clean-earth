@@ -7,5 +7,6 @@ import Edukasipage from "./Edukasipage";
 import Loginpage from "./Loginpage";
 import Registerpage from "./Registerpage";
 import Dashboard from "./Dashboard";
+import TambahNasabah from "./TambahNasabah";
 
-export { Nasabah, SetorSampah, Postingan, Pengaturan, Homepage, Edukasipage, Loginpage, Registerpage, Dashboard };
+export { Nasabah, SetorSampah, Postingan, Pengaturan, Homepage, Edukasipage, Loginpage, Registerpage, Dashboard, TambahNasabah };
