@@ -25,6 +25,7 @@ import {
   EditNasabah,
 } from "./pages/";
 import TestJWT from "./pages/TestJWT";
+import Komunitaspage from "./pages/Komunitaspage";
 
 const App = () => {
   return (

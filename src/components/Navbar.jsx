@@ -40,13 +40,13 @@ const Navbar = () => {
           className={"hidden md:flex gap-7 font-light font-poppins text-base"}
         >
           <li>
-            <a href="/">Beranda</a>
+            <NavLink to={"/"}>Beranda</NavLink>
           </li>
           <li>
-            <a href="/edukasi">Edukasi</a>
+            <NavLink to={"/edukasi"}>Edukasi</NavLink>
           </li>
           <li>
-            <a href="/">Komunitas</a>
+            <NavLink to={"/komunitas"}>Komunitas</NavLink>
           </li>
         </ul>
         {name == undefined ? (
@@ -99,7 +99,7 @@ const Navbar = () => {
 
         {/* Mobile navbar */}
         <ul
-          className={`md:hidden flex flex-col items-center  bg-white fixed w-full h-full bottom-0 py-24 pl-4 duration-500 ${
+          className={`md:hidden flex flex-col items-center z-50  bg-white fixed w-full h-full bottom-0 py-24 pl-4 duration-500 ${
             open ? "left-0" : "left-[-100%]"
           }`}
         >
@@ -117,7 +117,10 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" className="py-7 px-3 inline-block font-medium">
+            <NavLink
+              to='/komunitas'
+              className='py-7 px-3 inline-block font-medium'
+            >
               Komunitas
             </NavLink>
           </li>
