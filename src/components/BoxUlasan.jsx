@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 const BoxUlasan = (props) => {
   const {
     name = "John Doe",
-    komentar = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex aperiam a sunt id saepe quasi consequatur dignissimos perspiciatis alias nulla voluptatem dicta, totam incidunt, adipisci temporibus voluptas molestiae suscipit debitis.",
+    komentar = "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
     img,
     bintang,
     tanggal,

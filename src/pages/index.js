@@ -17,6 +17,7 @@ import PengaturanKatasandiUser from "./dashboard/user/PengaturanKatasandi";
 import TambahNasabah from "./dashboard/admin/TambahNasabah";
 import EditNasabah from "./dashboard/admin/EditNasabah";
 import BacaArtikel from "./BacaArtikel"; 
+import Komunitaspage from "./Komunitaspage";
 
 export {
   Nasabah,
@@ -38,4 +39,5 @@ export {
   TambahNasabah,
   BacaArtikel,
   EditNasabah,
+  Komunitaspage
 };

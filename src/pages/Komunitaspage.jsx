@@ -24,6 +24,12 @@ const Komunitaspage = () => {
   const [loading, setLoading] = useState(false);
   const [dataUlasan, setDataUlasan] = useState([]);
   const [trigger, setTrigger] = useState(false);
+  const staticPP = [
+    peopleKomunitas1,
+    peopleKomunitas2,
+    peopleKomunitas3,
+    peopleKomunitas4,
+  ];
 
   useEffect(() => {
     const getDataUlasan = async () => {
@@ -275,9 +281,10 @@ const Komunitaspage = () => {
               </h4>
               <div className={"w-3/4 h-[2px] bg-[#346654]"}></div>
             </div>
-            {dataUlasan.map((item, i) => (
+            {dataUlasan.map((item) => (
               <BoxUlasan
-                img={peopleKomunitas3}
+                key={item.id}
+                img={staticPP[Math.floor(Math.random() * (3 - 0 + 1)) + 0]}
                 name={item.users.nama}
                 bintang={item.bintang}
                 komentar={item.komentar}
