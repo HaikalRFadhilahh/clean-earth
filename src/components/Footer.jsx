@@ -46,7 +46,7 @@ const Footer = () => {
             }
           >
             <li
-              className={"text-center font-outfit font-semibold text-2xl mb-2"}
+              className={"text-center font-outfit font-semibold text-2xl mb-3"}
             >
               <h3>Instagram</h3>
             </li>
