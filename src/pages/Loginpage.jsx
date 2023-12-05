@@ -151,6 +151,14 @@ const Loginpage = () => {
                   Daftar Disini
                 </NavLink>
               </p>
+              <p className={"font-poppins text-center"}>
+                <NavLink
+                  className={"text-blue-400 hover:text-blue-500"}
+                  to={"/"}
+                >
+                  Kembali Ke Homepage
+                </NavLink>
+              </p>
             </div>
           </div>
         </div>

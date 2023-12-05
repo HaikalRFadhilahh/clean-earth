@@ -8,8 +8,7 @@ import { nama, token } from "../store";
 import { useRecoilState } from "recoil";
 import { IoMdArrowDropdown } from "react-icons/io";
 
-const Navbar = (props) => {
-  const { theme = "static" } = props;
+const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useRecoilState(nama);
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
@@ -25,22 +24,12 @@ const Navbar = (props) => {
   };
 
   return (
-    <nav
-      className={`w-screen ${
-        theme == "transparent" ? "absolute top-0 left-0" : "bg-white"
-      }`}
-    >
+    <nav className='bg-white w-screen'>
       <div className='flex items-center justify-between md:px-3 lg:px-7'>
         <div className='z-50 p-5 md:w-auto w-full flex justify-between '>
-          <div className='flex cursor-pointer' onClick={() => navigate("/")}>
+          <div className='flex'>
             <img src={Logo} alt='logo' className='md:cursor-pointer h-9' />
-            <h1
-              className={`pt-1 pl-2 font-bold text-xl ${
-                theme == "transparent" ? "text-white" : ""
-              }`}
-            >
-              CleanEarth
-            </h1>
+            <h1 className='pt-1 pl-2 font-bold text-xl'>CleanEarth</h1>
           </div>
           <div className='text-3xl md:hidden' onClick={() => setOpen(!open)}>
             <IoMdMenu name={`${open ? "close" : "menu"}`} />
@@ -48,7 +37,7 @@ const Navbar = (props) => {
         </div>
         {/* Navigation For Desktop */}
         <ul
-          className={`hidden md:flex gap-7 font-light font-poppins text-base`}
+          className={"hidden md:flex gap-7 font-light font-poppins text-base"}
         >
           <li>
             <NavLink to={"/"}>Beranda</NavLink>
@@ -66,19 +55,19 @@ const Navbar = (props) => {
               className='outline outline-2 bg-[#B0D9B1] outline-black '
               type='submit'
             >
-              <NavLink to='/daftar'>Daftar</NavLink>
+              <NavLink to='daftar'>Daftar</NavLink>
             </Button>
             <Button
               className='bg-[#F6F6F6] outline outline-2 outline-black'
               type='submit'
             >
-              <NavLink to='/masuk'>Masuk</NavLink>
+              <NavLink to='masuk'>Masuk</NavLink>
             </Button>
           </div>
         ) : (
           <div
             className={
-              "hidden md:flex px-2 rounded-2xl py-1 outline outline-2 bg-white outline-black gap-2 items-center relative cursor-pointer"
+              "hidden md:flex px-2 rounded-2xl py-1 outline outline-2 outline-black gap-2 items-center relative cursor-pointer"
             }
             onClick={() => setConfigToggle(!configToggle)}
           >
@@ -96,7 +85,7 @@ const Navbar = (props) => {
                 configToggle ? "flex" : "hidden"
               } absolute -bottom-16 rounded-2xl py-1 px-2 w-full outline outline-1 bg-white outline-green-600 right-0 flex-col font-poppins`}
             >
-              <NavLink to={"/"}>Akun Saya</NavLink>
+              <NavLink to={"/profile"}>Akun Saya</NavLink>
               <button
                 className={"w-fit text-red-600"}
                 onClick={() => handleLogout()}
@@ -110,7 +99,7 @@ const Navbar = (props) => {
 
         {/* Mobile navbar */}
         <ul
-          className={`md:hidden flex flex-col items-center  bg-white fixed w-full h-full bottom-0 py-24 pl-4 duration-500 z-50 ${
+          className={`md:hidden flex flex-col items-center z-50  bg-white fixed w-full h-full bottom-0 py-24 pl-4 duration-500 ${
             open ? "left-0" : "left-[-100%]"
           }`}
         >
@@ -135,6 +124,20 @@ const Navbar = (props) => {
               Komunitas
             </NavLink>
           </li>
+          {/* <div className={"flex md:hidden gap-3 py-3"}>
+            <Button
+              className='outline outline-2 bg-[#B0D9B1] '
+              type='submit'
+            >
+              Daftar
+            </Button>
+            <Button
+              className='bg-[#F6F6F6] outline outline-2 '
+              type='submit'
+            >
+              Masuk
+            </Button>
+          </div> */}
           {name == undefined ? (
             <div className={"flex md:hidden gap-3 py-3"}>
               <NavLink to={"/daftar"}>
