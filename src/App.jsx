@@ -46,7 +46,7 @@ const App = () => {
           <Route path='biodata' element={<PengaturanBiodataAdmin />} />
           <Route path='katasandi' element={<PengaturanKatasandiAdmin />} />
           <Route path='tambahnasabah' element={<TambahNasabah />} />
-          <Route path='editnasabah' element={<EditNasabah />} />
+          <Route path='editnasabah/:id' element={<EditNasabah />} />
         </Route>
 
         <Route path='/profile' element={<DashboardUserLayout />}>
