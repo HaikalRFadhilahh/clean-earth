@@ -97,7 +97,7 @@ const EditNasabah = () => {
            </div>
            <button
              type="submit"
-             className="bg-[#4CAF50] text-white py-2 px-4 rounded hover:bg-[#45a049]"
+             className="bg-[#B0D9B1] py-2 px-4 rounded hover:bg-[#45a049]"
            >
              Simpan Perubahan
            </button>

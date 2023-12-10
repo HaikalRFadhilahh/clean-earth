@@ -17,9 +17,9 @@ const BacaArtikel = () => {
           }}
           className=' mx-auto py-16 flex justify-center gap-8 mb-16'
         >
-          <div className='w-1/2 py-32 flex flex-col justify-center text-white'>
+          <div className='md:w-1/2 py-32 flex flex-col justify-center text-white'>
             <div className='px-8 text-center'>
-              <h1 className='text-4xl font-bold font-poppins'>
+              <h1 className='text-3xl md:text-4xl font-bold font-poppins'>
                 Ancaman Masalah Sampah
               </h1>
             </div>
