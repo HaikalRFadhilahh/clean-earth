@@ -16,7 +16,7 @@ const Nasabah = () => {
 
   const fetchNasabahData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/nasabah');
+      const response = await fetch('https://precious-battledress-ray.cyclic.app/nasabah');
       const data = await response.json();
       setNasabahData(data);
       setSearchResults(data);
@@ -42,7 +42,7 @@ const Nasabah = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/nasabah/${id}`, {
+      const response = await fetch(`https://precious-battledress-ray.cyclic.app/nasabah/${id}`, {
         method: 'DELETE',
       });
 
