@@ -55,7 +55,7 @@ const SetorSampah = () => {
         <div className='w-full flex justify-between p-4 sm:px-10'>
           <SearchDashboard onSearch={handleSearch} />
         </div>
-        <div className="m-8">
+        <div className="m-8 overflow-auto">
           <h2 className="text-xl font-semibold border-b-2 px-2 py-4 bg-[#EFF3F0]">Rincian Data Setor Sampah</h2>
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-[#EFF3F0]">

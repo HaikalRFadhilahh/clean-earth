@@ -176,7 +176,7 @@ const Registerpage = () => {
                   />
                 </div>
                 <Button
-                  className='w-fit h-fit py-3 px-2 bg-[#B0D9B1] outline outline-1 outline-black mx-auto'
+                  className='w-fit h-fit py-3 px-2 bg-[#618264] text-white mx-auto'
                   type='submit'
                 >
                   Daftar

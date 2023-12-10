@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 const BacaArtikel = () => {
   return (
     <Auth>
-      <div>
+      <div className={"w-full overflow-x-hidden"}>
         <Navbar />
         <div
           style={{

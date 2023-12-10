@@ -171,7 +171,7 @@ const Komunitaspage = () => {
               />
               <button
                 className={
-                  "mx-auto flex outline outline-1 outline-black px-4 py-2 rounded-md bg-[#B0D9B1] text-poppins text-black "
+                  "mx-auto flex px-4 py-2 rounded-md bg-[#618264] text-poppins text-white"
                 }
               >
                 Gabung Yuk
@@ -255,7 +255,7 @@ const Komunitaspage = () => {
                 required={true}
               />
               <Button
-                className={`font-poppins text-sm py-2 px-3 bg-[#B0D9B1] outline outline-1 outline-black my-3 mx-auto flex font-semibold`}
+                className={`font-poppins text-sm py-2 px-3 bg-[#618264] text-white my-3 mx-auto flex font-semibold`}
                 type='submit'
               >
                 Kirim

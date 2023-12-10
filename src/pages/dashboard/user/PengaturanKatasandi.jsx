@@ -41,7 +41,7 @@ const PengaturanBiodata = () => {
         <div className="ml-10 lg:ml-0 mt-1">
           <div className="flex flex-col p-4 w-5/6">
             <div className="relative sm:p-6 rounded-sm overflow-hidden">
-              <div className="font-poppins py-4 pl-1 rounded-lg text-xl shadow-xl flex justify-between items-center">
+              <div className="font-poppins py-4 px-2 rounded-lg text-xl shadow-xl flex justify-between items-center">
                 <h1 className="font-bold">Ubah Kata Sandi</h1>
                 <div>
                   <button className="bg-[#949494] p-2 hidden lg:inline-block w-20 rounded-xl mr-2 text-sm">

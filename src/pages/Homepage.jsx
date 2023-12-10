@@ -43,7 +43,7 @@ const Homepage = () => {
             </p>
             <Button
               type="submit"
-              className="bg-[#618264] outline-2 text-white outline "
+              className="bg-[#618264] text-white shadow-xl "
             >
               Gabung Yuk
             </Button>

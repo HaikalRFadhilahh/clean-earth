@@ -15,7 +15,7 @@ const Dashboard = () => {
         </div>
         <div>
           <NavLink>
-            <div className="flex justify-between bg-[#F6F6F6] lg:w-96 md:w-52 p-5 rounded-lg shadow-xl mx-10 mb-8">
+            <div className="flex justify-between bg-[#F6F6F6] md:w-96 sm:w-52 p-5 rounded-lg shadow-xl mx-10 mb-8">
               <div className="flex flex-col justify-center font-poppins">
                 <p>Total Transaksi Setor Sampah</p>
                 <h2 className="text-2xl font-bold mt-2">Rp. 230.000</h2>
