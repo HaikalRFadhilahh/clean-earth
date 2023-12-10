@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchDashboard from '../../../components/SearchDashboard';
 import Button from "../../../components/Button";
-import { NavLink,useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
@@ -47,7 +47,6 @@ const Nasabah = () => {
       });
 
       if (response.ok) {
-        // Remove the deleted Nasabah from the local state
         const updatedNasabahData = nasabahData.filter((nasabah) => nasabah._id !== id);
         setNasabahData(updatedNasabahData);
         setSearchResults(updatedNasabahData);

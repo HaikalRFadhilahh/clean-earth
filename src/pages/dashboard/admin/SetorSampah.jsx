@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import SearchDashboard from '../../../components/SearchDashboard';
 import Button from "../../../components/Button";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 const SetorSampah = () => {
+  const navigate = useNavigate();
   const [setorSampahData, setSetorSampahData] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
@@ -35,15 +37,27 @@ const SetorSampah = () => {
   };
 
   const handleEdit = (id) => {
-    // Logika untuk menghandle aksi edit
-    console.log(`Edit data dengan ID: ${id}`);
+    navigate(`/dashboard/editsetorsampah/${id}`);
   };
 
-  const handleDelete = (id) => {
-    // Logika untuk menghandle aksi delete
-    console.log(`Hapus data dengan ID: ${id}`);
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`https://precious-battledress-ray.cyclic.app/setorsampah/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        // Fetch the updated setor sampah data after successful deletion
+        fetchSetorSampahData();
+        console.log(`Data with ID ${id} deleted successfully`);
+      } else {
+        console.error(`Failed to delete data with ID ${id}`);
+      }
+    } catch (error) {
+      console.error('Error deleting data:', error);
+    }
   };
-
+  
   return (
     <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <main>
@@ -54,6 +68,12 @@ const SetorSampah = () => {
         </div>
         <div className='w-full flex justify-between p-4 sm:px-10'>
           <SearchDashboard onSearch={handleSearch} />
+          <NavLink
+            className='w-fit h-fit px-5 py-2 my-1 ml-2 rounded-md bg-[#B0D9B1] '
+            to='/dashboard/tambahsetorsampah'
+          >
+            Tambah
+          </NavLink>
         </div>
         <div className="m-8 overflow-auto">
           <h2 className="text-xl font-semibold border-b-2 px-2 py-4 bg-[#EFF3F0]">Rincian Data Setor Sampah</h2>
@@ -85,7 +105,7 @@ const SetorSampah = () => {
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {searchResults.map((setor, index) => (
-                <tr key={setor.id}>
+                <tr key={setor._id}>
                   <td className="px-6 py-4 whitespace-nowrap">{index + 1}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{new Date(setor.waktu).toLocaleDateString()}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{setor.nama}</td>
@@ -95,13 +115,13 @@ const SetorSampah = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <Button
                       className='mr-2 bg-[#FFF383] text-black py-2 px-4 rounded'
-                      onClick={() => handleEdit(setor.id)}
+                      onClick={() => handleEdit(setor._id)}
                     >
                       <FaEdit/>
                     </Button>
                     <Button
                       className='bg-[#EE5252] text-black py-2 px-4 rounded'
-                      onClick={() => handleDelete(setor.id)}
+                      onClick={() => handleDelete(setor._id)}
                     >
                       <MdDelete/>
                     </Button>
