@@ -180,7 +180,7 @@ const Navbar = () => {
               }
             >
               <li>
-                <NavLink to={"/"}>Pengaturan Akun</NavLink>
+                <NavLink to={"/profile"}>Akun Saya</NavLink>
               </li>
               <li
                 className={"text-red-600 cursor-pointer"}

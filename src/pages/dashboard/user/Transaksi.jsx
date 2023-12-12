@@ -29,7 +29,7 @@ const Transaksi = () => {
             Transaksi
           </h1>
         </div>
-        <div className="m-8">
+        <div className="m-8 overflow-auto">
           <h2 className="text-xl font-semibold border-b-2 px-2 py-4 bg-[#EFF3F0]">Riwayat Transaksi Setor Sampah</h2>
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-[#EFF3F0]">
