@@ -24,6 +24,8 @@ import {
   BacaArtikel,
   EditNasabah,
   Komunitaspage,
+  TambahSetorSampah,
+  EditSetorSampah,
 } from "./pages/";
 
 const App = () => {
@@ -46,7 +48,9 @@ const App = () => {
           <Route path='biodata' element={<PengaturanBiodataAdmin />} />
           <Route path='katasandi' element={<PengaturanKatasandiAdmin />} />
           <Route path='tambahnasabah' element={<TambahNasabah />} />
-          <Route path='editnasabah' element={<EditNasabah />} />
+          <Route path='tambahsetorsampah' element={<TambahSetorSampah />} />
+          <Route path='editnasabah/:id' element={<EditNasabah />} />
+          <Route path='editsetorsampah/:id' element={<EditSetorSampah />} />
         </Route>
 
         <Route path='/profile' element={<DashboardUserLayout />}>

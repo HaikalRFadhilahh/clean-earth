@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchDashboard from '../../../components/SearchDashboard';
 import Button from "../../../components/Button";
-import { NavLink,useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
@@ -37,7 +37,25 @@ const Nasabah = () => {
   };
 
   const handleEdit = (id) => {
-    navigate(`/dashboard/editnasabah`);
+    navigate(`/dashboard/editnasabah/${id}`);
+  };  
+
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`https://precious-battledress-ray.cyclic.app/nasabah/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        const updatedNasabahData = nasabahData.filter((nasabah) => nasabah._id !== id);
+        setNasabahData(updatedNasabahData);
+        setSearchResults(updatedNasabahData);
+      } else {
+        console.error('Failed to delete Nasabah:', response.status);
+      }
+    } catch (error) {
+      console.error('Error deleting Nasabah:', error);
+    }
   };
   
   return (
@@ -81,7 +99,7 @@ const Nasabah = () => {
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {searchResults.map((nasabah, index) => (
-                <tr key={nasabah.id}>
+                <tr key={nasabah._id}>
                   <td className="px-6 py-4 whitespace-nowrap">{index + 1}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{nasabah.nama}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{nasabah.no_telpon}</td>
@@ -89,13 +107,13 @@ const Nasabah = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <Button
                       className='mr-2 bg-[#FFF383] text-black py-2 px-4 rounded'
-                      onClick={() => handleEdit(nasabah.id)}
+                      onClick={() => handleEdit(nasabah._id)}
                     >
                       <FaEdit/>
                     </Button>
                     <Button
                       className='bg-[#EE5252] text-black py-2 px-4 rounded'
-                      onClick={() => handleDelete(nasabah.id)}
+                      onClick={() => handleDelete(nasabah._id)}
                     >
                       <MdDelete/>
                     </Button>

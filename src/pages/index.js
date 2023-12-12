@@ -18,6 +18,8 @@ import TambahNasabah from "./dashboard/admin/TambahNasabah";
 import EditNasabah from "./dashboard/admin/EditNasabah";
 import BacaArtikel from "./BacaArtikel"; 
 import Komunitaspage from "./Komunitaspage";
+import TambahSetorSampah from "./dashboard/admin/TambahSetorSampah";
+import EditSetorSampah from "./dashboard/admin/EditSetorSampah";
 
 export {
   Nasabah,
@@ -39,5 +41,7 @@ export {
   TambahNasabah,
   BacaArtikel,
   EditNasabah,
-  Komunitaspage
+  Komunitaspage,
+  TambahSetorSampah,
+  EditSetorSampah,
 };
