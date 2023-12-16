@@ -10,9 +10,9 @@ const token = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
-const nama = atom({
-  key: "nama",
-  default: undefined,
+const datausers = atom({
+  key: "datausers",
+  default: {},
   effects_UNSTABLE: [persistAtom],
 });
 
@@ -61,4 +61,4 @@ const getStatusAuth = selector({
 //   },
 // });
 
-export { token, getStatusAuth, nama };
+export { token, getStatusAuth, datausers };

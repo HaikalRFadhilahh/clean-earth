@@ -2,7 +2,7 @@ import ImgBanner from "../assets/login/imgLogin.png";
 import AuthInput from "../components/AuthInput";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { token, nama } from "../store";
+import { token, datausers } from "../store";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Button from "../components/Button";
@@ -15,7 +15,7 @@ const Loginpage = () => {
   const [credentials, setCredentials] = useState({});
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useRecoilState(nama);
+  const [datauser, setDatauser] = useRecoilState(datausers);
   const navigate = useNavigate();
 
   const loginAction = async (e) => {
@@ -54,7 +54,7 @@ const Loginpage = () => {
           },
         }
       );
-      setName(result.data.data.nama);
+      setDatauser(result.data.data);
       navigate("/");
     } catch (error) {
       setLoading(false);
