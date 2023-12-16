@@ -55,7 +55,7 @@ const Loginpage = () => {
         }
       );
       setDatauser(result.data.data);
-      navigate("/");
+      navigate("/profile");
     } catch (error) {
       setLoading(false);
       if (error.response.status == 400) {
