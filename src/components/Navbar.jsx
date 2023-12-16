@@ -67,10 +67,18 @@ const Navbar = () => {
           >
             <div
               className={
-                "w-8 aspect-square rounded-full bg-green-700 flex justify-center items-center"
+                "w-8 aspect-square rounded-full bg-green-700 flex justify-center items-center overflow-hidden"
               }
             >
-              <FaUser width={"100%"} height={"100%"} color={"white"} />
+              {datauser.image == null ? (
+                <FaUser width={"100%"} height={"100%"} color={"white"} />
+              ) : (
+                <img
+                  src={`${import.meta.env.VITE_API_SERVICE}${datauser.image}`}
+                  alt='Profile Picture'
+                  className={"w-full h-full object-cover"}
+                />
+              )}
             </div>
             <p className={"font-poppins font-medium text-sm"}>
               {datauser.nama}
