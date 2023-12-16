@@ -63,7 +63,9 @@ const Edukasipage = () => {
               mengelolanya, maka akan semakin besar juga kesempatanmu untuk
               menyelamatkan bumi ini
             </p>
-            <Button className='bg-[#618264]'>Jelajahi</Button>
+            <a className='px-5 py-2 rounded-md bg-[#618264]' href={"#jelajahi"}>
+              Jelajahi
+            </a>
           </div>
         </section>
       </div>
@@ -75,7 +77,7 @@ const Edukasipage = () => {
 
         <div className='w-screen px-12 flex flex-col justify-between md:flex-row'>
           <div className='md:w-3/5'>
-            <h1 className='text-4xl font-bold font-poppins'>
+            <h1 className='text-4xl font-bold font-poppins' id={"jelajahi"}>
               Apa itu sampah ?
             </h1>
             <p className='text-xl font-poppins font-light my-8 text-justify'>
