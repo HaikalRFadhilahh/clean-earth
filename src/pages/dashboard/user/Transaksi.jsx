@@ -3,14 +3,17 @@ import { datausers, token } from "../../../store";
 import { useRecoilState } from "recoil";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../../components/Loading";
 
 const Transaksi = () => {
   const [datauser, setDatauser] = useRecoilState(datausers);
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
   const [datasetorsampah, setDatasetorsampah] = useState([]);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     const getDataSetorSampah = async () => {
+      setLoading(true);
       try {
         const result = await axios.post(
           `${import.meta.env.VITE_API_SERVICE}/setorsampah`,
@@ -24,7 +27,9 @@ const Transaksi = () => {
           }
         );
         setDatasetorsampah(result.data.data);
+        setLoading(false);
       } catch (error) {
+        setLoading(false);
         setDatauser({});
         setTokenJWT(undefined);
         navigate("/masuk");
@@ -35,6 +40,7 @@ const Transaksi = () => {
 
   return (
     <div className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'>
+      <Loading show={loading} />
       <main>
         <div className='relative mx-4 sm:p-6 rounded-sm'>
           <h1 className='font-poppins p-4 rounded-lg text-2xl md:text-3xl shadow-xl font-bold capitalize'>

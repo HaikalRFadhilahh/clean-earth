@@ -6,12 +6,14 @@ import { useRecoilState } from "recoil";
 import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import Loading from "../../../components/Loading";
 
 const PengaturanBiodata = () => {
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
   const [validatepassword, setValidatepassword] = useState(null);
   const [datauser, setDatauser] = useRecoilState(datausers);
   const [tempdata, setTempdata] = useState(undefined);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -49,14 +51,15 @@ const PengaturanBiodata = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (validatepassword != tempdata.password) {
+      setLoading(false);
       withReactContent(Swal).fire({
         icon: "error",
         title: "Validation Error",
         text: "Password Tidak Sama!",
       });
     } else {
-      console.log(tempdata);
       try {
         const updateData = await axios.put(
           `${import.meta.env.VITE_API_SERVICE}/users/update`,
@@ -87,8 +90,10 @@ const PengaturanBiodata = () => {
           title: "Berhasil",
           text: "Ubah Password Berhasil",
         });
+        setLoading(false);
         navigate("/profile/akunsaya");
       } catch (error) {
+        setLoading(false);
         if (error.response.status == 400) {
           const err = error.response.data.message[0];
           withReactContent(Swal).fire({
@@ -109,6 +114,7 @@ const PengaturanBiodata = () => {
 
   return (
     <div className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'>
+      <Loading show={loading} />
       <main>
         <div className='relative mx-4 sm:p-6 rounded-sm overflow-hidden'>
           <h1 className='font-poppins p-4 rounded-lg text-2xl md:text-3xl shadow-xl font-bold capitalize'>

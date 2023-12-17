@@ -7,6 +7,7 @@ import { useRecoilState } from "recoil";
 import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import Loading from "../../../components/Loading";
 
 const PengaturanBiodata = () => {
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
@@ -15,8 +16,10 @@ const PengaturanBiodata = () => {
   const navigate = useNavigate();
   const [imageURL, setImageURL] = useState(null);
   const [dataform, setDataform] = useState(null);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const getDataUsers = async () => {
+      setLoading(true);
       try {
         const result = await axios.post(
           `${import.meta.env.VITE_API_SERVICE}/users/validate`,
@@ -46,7 +49,9 @@ const PengaturanBiodata = () => {
             `${import.meta.env.VITE_API_SERVICE}${result.data.data.image}`
           );
         }
+        setLoading(false);
       } catch (error) {
+        setLoading(false);
         setTokenJWT(undefined);
         navigate("/masuk");
       }
@@ -69,6 +74,7 @@ const PengaturanBiodata = () => {
 
   const editData = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const updateData = await axios.put(
         `${import.meta.env.VITE_API_SERVICE}/users/update`,
@@ -99,8 +105,10 @@ const PengaturanBiodata = () => {
         title: "Berhasil",
         text: "Update Data Berhasil",
       });
+      setLoading(false);
       navigate("/profile/akunsaya");
     } catch (error) {
+      setLoading(false);
       if (error.response.status == 400) {
         const err = error.response.data.message[0];
         withReactContent(Swal).fire({
@@ -120,6 +128,7 @@ const PengaturanBiodata = () => {
 
   return (
     <div className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'>
+      <Loading show={loading} />
       <main>
         <div className='relative mx-4 sm:p-6 rounded-sm overflow-hidden'>
           <h1 className='font-poppins p-4 rounded-lg text-2xl md:text-3xl shadow-xl font-bold capitalize'>
