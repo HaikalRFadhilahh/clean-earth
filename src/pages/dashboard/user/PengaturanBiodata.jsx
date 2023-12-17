@@ -7,7 +7,6 @@ import { useRecoilState } from "recoil";
 import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import FileBase64 from "react-file-base64";
 
 const PengaturanBiodata = () => {
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
