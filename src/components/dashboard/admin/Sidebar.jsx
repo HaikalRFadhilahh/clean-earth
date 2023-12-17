@@ -74,14 +74,14 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       >
         {/* Sidebar header */}
         <div className="flex justify-between pr-3 sm:px-2">
-          {/* Close button */}   
+          {/* Close button */}
           <button
             ref={trigger}
             className="lg:hidden text-slate-500 hover:text-slate-400"
             onClick={() => setSidebarOpen(!sidebarOpen)}
             aria-controls="sidebar"
             aria-expanded={sidebarOpen}
-          > 
+          >
             <span className="sr-only">Close sidebar</span>
             <svg
               className="w-6 h-6 fill-current"
@@ -194,13 +194,13 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 </NavLink>
 
                 <NavLink
-                  className={`block text-slate-200 truncate transition duration-150 mt-24`}
+                  className={`block text-slate-200 truncate transition duration-150 mt-20`}
                   to="/"
                 >
                   <div className="flex items-center justify-between group">
                     <div className="flex items-center">
-                      <RxExit  className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
-                      <span className=" font-poppins text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200   group-hover:text-green-500">
+                      <RxExit className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
+                      <span className=" font-poppins text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
                         Keluar{" "}
                       </span>
                     </div>
@@ -230,7 +230,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
         </div>
       </div>
-    </div> 
+    </div>
   );
 }
 
