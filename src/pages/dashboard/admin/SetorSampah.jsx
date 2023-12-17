@@ -38,6 +38,7 @@ const SetorSampah = () => {
 
   const handleEdit = (id) => {
     navigate(`/dashboard/editsetorsampah/${id}`);
+    
   };
 
   const handleDelete = async (id) => {
