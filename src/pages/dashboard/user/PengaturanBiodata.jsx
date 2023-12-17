@@ -7,6 +7,7 @@ import { useRecoilState } from "recoil";
 import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import FileBase64 from "react-file-base64";
 
 const PengaturanBiodata = () => {
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
@@ -47,7 +48,6 @@ const PengaturanBiodata = () => {
           );
         }
       } catch (error) {
-        console.log(error);
         setTokenJWT(undefined);
         navigate("/masuk");
       }
@@ -57,8 +57,12 @@ const PengaturanBiodata = () => {
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
-
+    const reader = new FileReader();
     if (file) {
+      reader.onloadend = () => {
+        setDataform({ ...dataform, image: reader.result });
+      };
+      reader.readAsDataURL(file);
       const imageURL = URL.createObjectURL(file);
       setImageURL(imageURL);
     }
@@ -169,7 +173,7 @@ const PengaturanBiodata = () => {
                   type='file'
                   className='sr-only'
                   accept='image/*'
-                  onChange={handleImageChange}
+                  onChange={(e) => handleImageChange(e)}
                 />
               </label>
             </div>
@@ -220,25 +224,11 @@ const PengaturanBiodata = () => {
                       onChange={(e) => {
                         setDataform({ ...dataform, gender: e.target.value });
                       }}
+                      value={useradata.gender || ""}
                     >
-                      <option
-                        value=''
-                        selected={useradata.gender == null ? true : false}
-                      >
-                        Pilih Jelas Kelamin
-                      </option>
-                      <option
-                        value='L'
-                        selected={useradata.gender == "L" ? true : false}
-                      >
-                        Laki-Laki
-                      </option>
-                      <option
-                        value='P'
-                        selected={useradata.gender == "P" ? true : false}
-                      >
-                        Perempuan
-                      </option>
+                      <option value=''>Pilih Jelas Kelamin</option>
+                      <option value='L'>Laki-Laki</option>
+                      <option value='P'>Perempuan</option>
                     </select>
                   </div>
                   <div className='flex flex-col gap-2'>
