@@ -99,7 +99,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
           <h2
             className={
-              "2xl:text-xl font-bold font-poppins text-center text-white lg:text-xs mt-5"
+              "font-poppins lg:hidden lg:sidebar-expanded:block 2xl:block text-2xl text-white font-semibold text-center mt-5"
             }
           >
             Admin Dashboard
