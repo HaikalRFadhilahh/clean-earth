@@ -15,7 +15,7 @@ const Footer = () => {
               <a href={"https://www.instagram.com/cleanearth12/"} target="_blank">Instagram</a>
             </li>
             <li className={"text-base font-light"}>
-              <a href={"#"}>Facebook</a>
+              <a href={"https://www.facebook.com/people/Celan-Earth/61554381076404/"} target="_blank">Facebook</a>
             </li>
             <li className={"text-base font-light"}>
               <a href={"#"}>Linkedin</a>
