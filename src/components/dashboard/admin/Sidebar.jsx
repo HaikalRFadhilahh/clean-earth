@@ -194,10 +194,10 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 </NavLink>
 
                 <NavLink
-                  className={`block text-slate-200 truncate transition duration-150 mt-20`}
+                  className={`block text-slate-200 truncate transition duration-150 mt-6 md:mt-20`}
                   to="/"
                 >
-                  <div className="flex items-center justify-between group">
+                  <div className="flex items-center mt-0 justify-between group">
                     <div className="flex items-center">
                       <RxExit className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
                       <span className=" font-poppins text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">

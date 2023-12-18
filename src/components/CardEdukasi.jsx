@@ -15,7 +15,7 @@ const CardEdukasi = ({ imageSrc, title, content, linkTo }) => {
       </div>
       <div className="p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl">
         <button>
-          <NavLink to={linkTo}>BACA SELENGKANYA</NavLink>
+          <NavLink to={linkTo}>BACA SELENGKAPNYA</NavLink>
         </button>
       </div>
     </div>

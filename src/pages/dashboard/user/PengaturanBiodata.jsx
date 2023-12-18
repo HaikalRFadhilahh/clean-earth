@@ -1,11 +1,10 @@
 import React from "react";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { MdOutlineImage } from "react-icons/md";
 import ImgProfile from "../../../assets/img/Profile.png";
 
 const PengaturanBiodata = () => {
-
   return (
     <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <main>
@@ -57,12 +56,16 @@ const PengaturanBiodata = () => {
               <div className="font-poppins py-4 px-2 rounded-lg text-xl shadow-xl flex justify-between items-center">
                 <h1 className="font-bold">Informasi Data Diri</h1>
                 <div>
-                  <button className="bg-[#949494] p-2 hidden md:inline-block w-20 rounded-xl mr-2 text-sm">
-                    <a href="">Batal</a>
-                  </button>
-                  <button className="bg-[#154EF9] p-2 hidden md:inline-block w-20 rounded-xl text-sm">
-                    <a href="">Simpan</a>
-                  </button>
+                  <a href="">
+                    <button className="bg-[#949494] p-2 hidden md:inline-block w-20 rounded-xl mr-2 text-sm">
+                      Batal
+                    </button>
+                  </a>
+                  <a href="">
+                    <button className="bg-[#154EF9] p-2 hidden md:inline-block w-20 rounded-xl text-sm">
+                      Simpan
+                    </button>
+                  </a>
                 </div>
               </div>
               <div>
@@ -111,12 +114,16 @@ const PengaturanBiodata = () => {
               </div>
             </div>
             <div className="mt-5">
-              <button className="bg-[#949494] p-2 w-20 md:hidden rounded-xl mr-2 text-sm">
-                <a href="">Batal</a>
-              </button>
-              <button className="bg-[#154EF9] p-2 w-20 md:hidden rounded-xl text-sm">
-                <a href="">Simpan</a>
-              </button>
+              <a href="">
+                <button className="bg-[#949494] p-2 w-20 md:hidden rounded-xl mr-2 text-sm">
+                  Batal
+                </button>
+              </a>
+              <a href="">
+                <button className="bg-[#154EF9] p-2 w-20 md:hidden rounded-xl text-sm">
+                  Simpan
+                </button>
+              </a>
             </div>
           </div>
         </div>
