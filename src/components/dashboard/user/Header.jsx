@@ -4,7 +4,6 @@ import { useRecoilState } from "recoil";
 import guestUser from "../../../assets/img/guestUsers.webp";
 
 function Header({ sidebarOpen, setSidebarOpen }) {
-  const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [datauser, setDatauser] = useRecoilState(datausers);
 
   return (
