@@ -7,6 +7,8 @@ import { datausers, token } from "../../../store";
 import { useRecoilState } from "recoil";
 import axios from "axios";
 import Button from "../../../components/Button";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Nasabah = () => {
   const navigate = useNavigate();
@@ -14,9 +16,45 @@ const Nasabah = () => {
   const [datauser, setDatauser] = useRecoilState(datausers);
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
   const [dataUsers, setDataUsers] = useState([]);
+  const [trigger, setTrigger] = useState(false);
 
   const handleRemoveUser = async (id) => {
-    console.log(id);
+    withReactContent(Swal)
+      .fire({
+        title: "Ingin Hapus Data?",
+        text: "Apakah Anda Yakin Akan Menghapus Data User",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Hapus",
+      })
+      .then(async (res) => {
+        if (res.isConfirmed) {
+          try {
+            await axios.delete(
+              `${import.meta.env.VITE_API_SERVICE}/users/delete/${id}`,
+              {
+                headers: {
+                  Authorization: tokenJWT,
+                  Accept: "application/json",
+                  "Content-Type": "application/json;charset=UTF-8",
+                },
+              }
+            );
+            withReactContent(Swal).fire({
+              icon: "success",
+              title: "Berhasil",
+              text: "Berhasil Menghapus Data User",
+            });
+            setTrigger(!trigger);
+          } catch (error) {
+            datauser({});
+            token(undefined);
+            navigate("/masuk");
+          }
+        }
+      });
   };
 
   useEffect(() => {
@@ -42,7 +80,7 @@ const Nasabah = () => {
       }
     };
     getDataUsers();
-  }, [navigate]);
+  }, [navigate, trigger]);
 
   return (
     <div className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'>
