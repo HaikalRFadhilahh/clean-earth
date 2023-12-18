@@ -12,7 +12,7 @@ const Footer = () => {
               <h3 className={"text-2xl font-semibold mb-2"}>Sosial</h3>
             </li>
             <li className={"text-base font-light"}>
-              <a href={"#"}>Instagram</a>
+              <a href={"https://www.instagram.com/cleanearth12/"} target="_blank">Instagram</a>
             </li>
             <li className={"text-base font-light"}>
               <a href={"#"}>Facebook</a>

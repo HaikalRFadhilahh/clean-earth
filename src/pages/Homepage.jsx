@@ -132,7 +132,7 @@ const Homepage = () => {
           Galeri Kami
         </h2>
         <DotAccesnt count="3" className="mx-auto" />
-        <div className={"flex flex-wrap justify-center gap-x-6 gap-y-4"}>
+        <div className={"flex flex-wrap justify-center gap-x-6 gap-y-4 my-4"}>
           <BoxGallery gambar={Prosespembuatan1} />
           <BoxGallery gambar={Prosespembuatan2} />
           <BoxGallery gambar={Prosespembuatan3} />
