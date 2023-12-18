@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
-const SearchDashboard = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
+const SearchDashboard = ({ onSearch, val }) => {
   const handleSearch = (e) => {
     const value = e.target.value;
-    setSearchTerm(value);
     onSearch(value);
   };
 
@@ -19,8 +16,8 @@ const SearchDashboard = ({ onSearch }) => {
           name='search'
           id='search'
           className='focus:ring-green-500 focus:border-green-500 flex-1 block w-full rounded-md sm:text-sm border-none py-1 px-2'
-          placeholder='Cari nasabah'
-          value={searchTerm}
+          placeholder='Cari Nama Nasabah'
+          value={val}
           onChange={handleSearch}
         />
       </div>

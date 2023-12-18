@@ -6,13 +6,18 @@ import { MdDelete } from "react-icons/md";
 import { datausers, token } from "../../../store";
 import { useRecoilState } from "recoil";
 import axios from "axios";
+import Button from "../../../components/Button";
 
 const Nasabah = () => {
   const navigate = useNavigate();
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState();
   const [datauser, setDatauser] = useRecoilState(datausers);
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
   const [dataUsers, setDataUsers] = useState([]);
+
+  const handleRemoveUser = async (id) => {
+    console.log(id);
+  };
 
   useEffect(() => {
     const getDataUsers = async () => {
@@ -30,7 +35,6 @@ const Nasabah = () => {
         );
 
         setDataUsers(result.data.data);
-        console.log(result.data.data);
       } catch (error) {
         setDatauser({});
         setTokenJWT(undefined);
@@ -49,42 +53,42 @@ const Nasabah = () => {
           </h1>
         </div>
         <div className='w-full flex justify-between p-4 sm:px-10'>
-          <SearchDashboard />
+          <SearchDashboard onSearch={setSearchResults} val={searchResults} />
         </div>
         <div className='px-8 py-6 w-fullmin-h h-fit overflow-auto'>
           <h2 className='text-xl font-semibold border-b-2 px-2 py-4 bg-[#EFF3F0]'>
             Daftar Nasabah
           </h2>
-          <table className='min-w-full divide-y divide-gray-200'>
+          <table className='min-w-full divide-y divide-gray-200 text-center'>
             <thead className='bg-[#EFF3F0]'>
               <tr>
                 <th
                   scope='col'
-                  className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  className='px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider'
                 >
                   Nomor
                 </th>
                 <th
                   scope='col'
-                  className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  className='px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider'
                 >
                   Nama
                 </th>
                 <th
                   scope='col'
-                  className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  className='px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider'
                 >
                   No Telepon
                 </th>
                 <th
                   scope='col'
-                  className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  className='px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider'
                 >
                   Alamat
                 </th>
                 <th
                   scope='col'
-                  className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  className='px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider'
                 >
                   Aksi
                 </th>
@@ -106,19 +110,63 @@ const Nasabah = () => {
                 <></>
               )}
               {dataUsers.map((item, i) => {
-                return (
-                  <tr key={item.id}>
-                    <td className='px-6 py-4 whitespace-nowrap'>{i + 1}</td>
-                    <td className='px-6 py-4 whitespace-nowrap'>{item.nama}</td>
-                    <td className='px-6 py-4 whitespace-nowrap'>
-                      {item.kontak}
-                    </td>
-                    <td className='px-6 py-4 whitespace-nowrap'>
-                      {item.alamat}
-                    </td>
-                    <td>Coming Soon</td>
-                  </tr>
-                );
+                if (searchResults != "" && searchResults != undefined) {
+                  if (
+                    item.nama
+                      .toLowerCase()
+                      .includes(searchResults.toLowerCase())
+                  ) {
+                    return (
+                      <tr key={item.id}>
+                        <td className='px-6 py-4 whitespace-nowrap'>{i + 1}</td>
+                        <td className='px-6 py-4 whitespace-nowrap'>
+                          {item.nama}
+                        </td>
+                        <td className='px-6 py-4 whitespace-nowrap'>
+                          {item.kontak}
+                        </td>
+                        <td className='px-6 py-4 whitespace-nowrap'>
+                          {item.alamat == null ? "-" : item.alamat}
+                        </td>
+                        <td className={"px-6 py-4 whitespace-nowrap"}>
+                          <Button
+                            className='bg-[#B31312]'
+                            onClick={() => {
+                              handleRemoveUser(item.id);
+                            }}
+                          >
+                            <MdDelete size={20} color={"#F0F0F0"} />
+                          </Button>
+                        </td>
+                      </tr>
+                    );
+                  }
+                } else if (i + 1 <= 10) {
+                  return (
+                    <tr key={item.id}>
+                      <td className='px-6 py-4 whitespace-nowrap'>{i + 1}</td>
+                      <td className='px-6 py-4 whitespace-nowrap'>
+                        {item.nama}
+                      </td>
+                      <td className='px-6 py-4 whitespace-nowrap'>
+                        {item.kontak}
+                      </td>
+                      <td className='px-6 py-4 whitespace-nowrap'>
+                        {item.alamat == null ? "-" : item.alamat}
+                      </td>
+                      <td className={"px-6 py-4 whitespace-nowrap"}>
+                        <Button
+                          className='bg-[#B31312]'
+                          onClick={() => {
+                            handleRemoveUser(item.id);
+                          }}
+                        >
+                          <MdDelete size={20} color={"#F0F0F0"} />
+                        </Button>
+                      </td>
+                    </tr>
+                  );
+                }
               })}
             </tbody>
           </table>
