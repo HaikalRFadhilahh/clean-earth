@@ -44,12 +44,16 @@ const PengaturanBiodata = () => {
               <div className="font-poppins py-4 px-2 rounded-lg text-xl shadow-xl flex justify-between items-center">
                 <h1 className="font-bold">Ubah Kata Sandi</h1>
                 <div>
-                  <button className="bg-[#949494] p-2 hidden lg:inline-block w-20 rounded-xl mr-2 text-sm">
-                    <a href="">Batal</a>
-                  </button>
-                  <button className="bg-[#154EF9] p-2 hidden lg:inline-block w-40 rounded-xl text-sm">
-                    <a href="">Ubah Kata Sandi</a>
-                  </button>
+                  <a href="">
+                    <button className="bg-[#949494] p-2 hidden lg:inline-block w-20 rounded-xl mr-2 text-sm">
+                      Batal
+                    </button>
+                  </a>
+                  <a href="">
+                    <button className="bg-[#154EF9] p-2 hidden lg:inline-block w-40 rounded-xl text-sm">
+                      Ubah Kata Sandi
+                    </button>
+                  </a>
                 </div>
               </div>
               <div>
