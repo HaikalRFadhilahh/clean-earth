@@ -46,7 +46,9 @@ const Edukasipage = () => {
               mengelolanya, maka akan semakin besar juga kesempatanmu untuk
               menyelamatkan bumi ini
             </p>
-            <Button className="bg-[#618264]">Jelajahi</Button>
+            <a href="#artikel">
+              <Button className="bg-[#618264]">Jelajahi</Button>
+            </a>
           </div>
         </section>
       </div>
@@ -178,7 +180,7 @@ const Edukasipage = () => {
           </div>
         </div>
 
-        <div className="w-screen flex flex-col justify-center">
+        <div className="w-screen flex flex-col justify-center" id="artikel">
           <h1 className="text-3xl font-bold font-poppins text-center">
             Ada artikel juga nih, dibaca ya
           </h1>

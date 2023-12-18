@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import ImgProfile from "../../../assets/img/Profile.png";
 
 const AkunSaya = () => {
@@ -23,9 +25,9 @@ const AkunSaya = () => {
             <p className="mt-5">+62 812-9550-2632</p>
           </div>
           <div className="mt-5 font-poppins">
-            <a href="/profile/pengaturanbiodata">
+            <Link to={"/profile/pengaturanbiodata"}>
               <button className="bg-[#B0D9B1] p-2 w-28 rounded-xl">Edit</button>
-            </a>
+            </Link>
           </div>
         </div>
       </main>

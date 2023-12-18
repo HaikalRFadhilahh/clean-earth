@@ -26,16 +26,13 @@ const Footer = () => {
               <h3 className={"text-2xl font-semibold mb-2"}>Layanan</h3>
             </li>
             <li className={"text-base font-light text-[#F4F0F0]"}>
-              <a href={"#"}>Edukasi</a>
+              <a href={"/edukasi"}>Edukasi</a>
             </li>
             <li className={"text-base font-light text-[#F4F0F0]"}>
-              <a href={"#"}>Komunitas</a>
+              <a href={"/komunitas"}>Komunitas</a>
             </li>
             <li className={"text-base font-light text-[#F4F0F0]"}>
-              <a href={"#"}>Jual Beli</a>
-            </li>
-            <li className={"text-base font-light text-[#F4F0F0]"}>
-              <a href={"#"}>Umpan Balik</a>
+              <a href={"/"}>Umpan Balik</a>
             </li>
           </ul>
         </div>
@@ -50,18 +47,18 @@ const Footer = () => {
             >
               <h3>Instagram</h3>
             </li>
-            <li>@anisaaa_hsnh</li>
-            <li>@maulida_mila07</li>
-            <li>@ndaruwindra</li>
-            <li>@septyanrully_ekel</li>
-            <li>@__faeznz</li>
-            <li>@haikalrfadhilah</li>
-            <li>@yuliyana_ng</li>
+            <li><a href={"https://www.instagram.com/anisaaa_hsnh/"} target="_blank">@anisaaa_hsnha</a></li>
+            <li><a href={"https://www.instagram.com/maulida_mila07/"} target="_blank">@maulida_mila07</a></li>
+            <li><a href={"https://www.instagram.com/ndaruwindra/"} target="_blank">@ndaruwindra</a></li>
+            <li><a href={"https://www.instagram.com/septyanrully_ekel/"} target="_blank">@septyanrully_eke</a></li>
+            <li><a href={"https://www.instagram.com/__faeznz/"} target="_blank">@__faeznz</a></li>
+            <li><a href={"https://www.instagram.com/haikalrfadhilah/"} target="_blank">@haikalrfadhilah</a></li>
+            <li><a href={"https://www.instagram.com/yuliyana_ng/"} target="_blank">@yuliyana_ng</a></li>
           </ul>
         </div>
         <h2
           className={
-            "w-full text-center font-poppins font-semibold text-lg text-[#F4F0F0] my-4 md:my-0"
+            "w-full text-center font-poppins font-semibold text-lg text-[#F4F0F0] my-0 md:mt-10"
           }
         >
           Copyright 2023 CleanEarth
