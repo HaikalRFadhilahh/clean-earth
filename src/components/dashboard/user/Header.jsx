@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ImgProfile from "../../../assets/img/Profile.png";
 import { datausers } from "../../../store";
 import { useRecoilState } from "recoil";
 import guestUser from "../../../assets/img/guestUsers.webp";

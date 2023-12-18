@@ -1,10 +1,15 @@
 export function convertToInternationalFormat(phoneNumber) {
-  // Hilangkan karakter-karakter yang tidak diperlukan (misalnya: spasi, tanda hubung)
+  // Check if phoneNumber is defined and not null
+  if (!phoneNumber) {
+    return ""; // or handle the case accordingly
+  }
+
+  // Remove unwanted characters (e.g., spaces, dashes)
   phoneNumber = phoneNumber.replace(/[\s\-]/g, "");
 
-  // Periksa apakah nomor telepon dimulai dengan "0"
+  // Check if phoneNumber starts with "0"
   if (phoneNumber.startsWith("0")) {
-    // Hapus "0" pertama dan tambahkan kode negara
+    // Remove the first "0" and add the country code
     phoneNumber =
       "+62 " +
       phoneNumber.slice(1, 5) +
@@ -13,7 +18,7 @@ export function convertToInternationalFormat(phoneNumber) {
       "-" +
       phoneNumber.slice(9);
   } else {
-    // Jika tidak dimulai dengan "0", anggapkan bahwa sudah dalam format internasional
+    // If it doesn't start with "0", assume it's already in international format
     phoneNumber = "+" + phoneNumber;
   }
 
