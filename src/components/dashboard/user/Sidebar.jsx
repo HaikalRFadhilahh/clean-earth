@@ -66,7 +66,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       <div
         id="sidebar"
         ref={sidebar}
-        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-32 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 dark:bg-[#2d4e38] p-4 transition-all duration-200 ease-in-out ${
+        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-46 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 dark:bg-[#2d4e38] p-4 transition-all duration-200 ease-in-out ${
           sidebarOpen ? "translate-x-0" : "-translate-x-64"
         }`}
       >
@@ -88,16 +88,16 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             >
               <path d="M10.7 18.7l1.4-1.4L7.8 13H20v-2H7.8l4.3-4.3-1.4-1.4L4 12z" />
             </svg>
-          </button>
+          </button> 
         </div>
 
         <NavLink to="/profile">
           <div className="flex justify-center mt-5">
-            <img src={Logo} alt="" width="100" height="100" />
+            <img src={Logo} alt="" className="2xl:w-[100px] lg:w-[60px] w-[100px]" />
           </div>
           <h2
             className={
-              "2xl:text-xl font-bold font-poppins text-center text-white lg:text-s mt-5"
+              "font-poppins lg:hidden lg:sidebar-expanded:block 2xl:block text-2xl text-white font-semibold text-center mt-5"
             }
           >
             Dashboard User
@@ -128,7 +128,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   <div className="flex items-center justify-between group">
                     <div className="flex items-center ">
                       <IoMdHome className="text-slate-200 w-7 h-7 group-hover:text-green-500 " />
-                      <span className="font-poppins text-base font-medium ml-3 2xl:inline lg:hidden lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
+                      <span className=" font-poppins text-base font-medium ml-3 2xl:inline lg:hidden lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
                         Dashboard{" "}
                       </span>
                     </div>
@@ -170,7 +170,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   <div className="flex items-center mt-28 md:mt-40 justify-between group">
                     <div className="flex items-center">
                       <RxExit className="text-slate-200 w-7 h-7 group-hover:text-green-500" />
-                      <span className="font-poppins text-sm font-medium ml-3 2xl:inline lg:hidden lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
+                      <span className=" font-poppins text-sm font-medium ml-3 2xl:inline lg:hidden lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500">
                         Keluar{" "}
                       </span>
                     </div>
@@ -185,8 +185,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         <div className="pt-3 hidden lg:inline-flex 2xl:hidden justify-end mt-auto">
           <div className="px-3 py-2">
             <button onClick={() => setSidebarExpanded(!sidebarExpanded)}>
-              <span className="sr-only">Expand / collapse sidebar</span>
-              {/* <svg
+              {/* <span className="sr-only">Expand / collapse sidebar</span>
+              <svg
                 className="w-6 h-6 fill-current sidebar-expanded:rotate-180"
                 viewBox="0 0 24 24"
               >
