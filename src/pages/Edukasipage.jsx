@@ -63,8 +63,8 @@ const Edukasipage = () => {
               mengelolanya, maka akan semakin besar juga kesempatanmu untuk
               menyelamatkan bumi ini
             </p>
-            <a className='px-5 py-2 rounded-md bg-[#618264]' href={"#jelajahi"}>
-              Jelajahi
+            <a href="#artikel">
+              <Button className="bg-[#618264]">Jelajahi</Button>
             </a>
           </div>
         </section>
@@ -196,9 +196,8 @@ const Edukasipage = () => {
             </div>
           </div>
         </div>
-
-        <div className='w-screen flex flex-col justify-center'>
-          <h1 className='text-3xl font-bold font-poppins text-center'>
+        <div className="w-screen flex flex-col justify-center" id="artikel">
+          <h1 className="text-3xl font-bold font-poppins text-center">
             Ada artikel juga nih, dibaca ya
           </h1>
           {datapostingan ? (

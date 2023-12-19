@@ -161,7 +161,6 @@ const PengaturanBiodata = () => {
             </NavLink>
           </ul>
         </div>
-
         <div className='sm:flex justify-center flex-col lg:flex-row mt-10'>
           <div className='w-96 flex flex-col items-center p-5'>
             <img

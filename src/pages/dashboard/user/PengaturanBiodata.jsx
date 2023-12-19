@@ -125,7 +125,6 @@ const PengaturanBiodata = () => {
       }
     }
   };
-
   return (
     <div className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'>
       <Loading show={loading} />
@@ -161,7 +160,6 @@ const PengaturanBiodata = () => {
             </NavLink>
           </ul>
         </div>
-
         <div className='sm:flex justify-center flex-col lg:flex-row mt-10'>
           <div className='w-96 flex flex-col items-center p-5'>
             <img
@@ -186,7 +184,6 @@ const PengaturanBiodata = () => {
               </label>
             </div>
           </div>
-
           <div className='sm:flex ml-10 p-4 md:flex-col w-5/6'>
             <div className='relative sm:p-6 rounded-sm overflow-hidden'>
               <div className='font-poppins py-4 px-2 rounded-lg text-xl shadow-xl flex justify-between items-center'>

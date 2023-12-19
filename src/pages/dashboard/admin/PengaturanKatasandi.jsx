@@ -147,7 +147,6 @@ const PengaturanBiodata = () => {
             </NavLink>
           </ul>
         </div>
-
         <div className='ml-10 lg:ml-0 mt-1'>
           <div className='flex flex-col p-4 w-5/6'>
             <div className='relative sm:p-6 rounded-sm overflow-hidden'>

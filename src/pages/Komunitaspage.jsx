@@ -19,7 +19,10 @@ import Loading from "../components/Loading";
 import BoxUlasan from "../components/BoxUlasan";
 import Auth from "../middleware/Auth";
 
+import { Link } from "react-router-dom";
+
 const Komunitaspage = () => {
+  const linkGrupTelegram = "https://t.me/+sQxLGl3n34c3Mjg1";
   const [ulasan, setUlasan] = useState({ bintang: 0 });
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
   const [loading, setLoading] = useState(false);
@@ -117,7 +120,7 @@ const Komunitaspage = () => {
         >
           <img
             src={BackgroundComunity}
-            alt=''
+            alt=""
             className={"object-cover bg-center w-full h-full"}
           />
           <div
@@ -138,7 +141,7 @@ const Komunitaspage = () => {
         {/* Banner Section End */}
         {/* Chatting Section Start */}
         <section className={"w-screen overflow-x-hidden md:-translate-y-24"}>
-          <div className='container mx-auto h-fit flex justify-center px-2 my-2'>
+          <div className="container mx-auto h-fit flex justify-center px-2 my-2">
             <div
               className={
                 "w-full max-w-6xl rounded-md contrast-150 px-2 py-3 md:py-4 md:px-3 bg-gradient-to-b from-[#A1B4AC] via-[#A1B4AC] to-white md:opacity-[0.93]"
@@ -146,38 +149,40 @@ const Komunitaspage = () => {
             >
               <Chat
                 reverse={true}
-                message='Hallo Apa Kabar Kalian'
+                message="Hallo Apa Kabar Kalian"
                 img={peopleKomunitas1}
               />
-              <Chat message='Baik Aja' img={peopleKomunitas2} />
+              <Chat message="Baik Aja" img={peopleKomunitas2} />
               <Chat
-                message='Baik nih, mau nanya dong tentang pembuatan daur ulang yang mudah dibuat. Apa aja ya kira-kira?'
+                message="Baik nih, mau nanya dong tentang pembuatan daur ulang yang mudah dibuat. Apa aja ya kira-kira?"
                 img={peopleKomunitas3}
               />
               <Chat
                 reverse={true}
-                message='Aku suh biasanya buat pot dari botol bekas'
+                message="Aku suh biasanya buat pot dari botol bekas"
                 img={peopleKomunitas4}
               />
               <Chat
                 reverse={true}
-                message='Atau ubah botol bekas jadi tempat pensil juga bisa'
+                message="Atau ubah botol bekas jadi tempat pensil juga bisa"
                 img={peopleKomunitas4}
               />
-              <button
-                className={
-                  "mx-auto flex px-4 py-2 rounded-md bg-[#618264] text-poppins text-white"
-                }
-              >
-                Gabung Yuk
-              </button>
+              <Link to={linkGrupTelegram} target="_blank">
+                <button
+                  className={
+                    "mx-auto flex px-4 py-2 rounded-md bg-[#618264] text-poppins text-white"
+                  }
+                >
+                  Gabung Yuk
+                </button>
+              </Link>
             </div>
           </div>
         </section>
         {/* Chatting Section End */}
         {/* Form Rating Start */}
         <section className={"w-screen overflow-x-hidden py-4 px-2 md:py-5"}>
-          <div className='container mx-auto flex flex-col gap-5'>
+          <div className="container mx-auto flex flex-col gap-5">
             <h3
               className={
                 "font-poppins text-center font-semibold text-xl my-1 md:text-left w-full md:text-2xl"
@@ -186,8 +191,8 @@ const Komunitaspage = () => {
               Berikan Rating Pada Kami
             </h3>
             <form
-              action='
-        '
+              action="
+        "
               onSubmit={handleSubmitUlasan}
             >
               <div
@@ -239,7 +244,7 @@ const Komunitaspage = () => {
                 Ceritakan pengalaman kamu selama bergabung di komunitas kami ya!
               </p>
               <input
-                type='text'
+                type="text"
                 className={
                   "px-2 py-2 w-full outline outline-1 outline-black placeholder:font-poppins placeholder:text-sm rounded-md font-poppins"
                 }
@@ -251,7 +256,7 @@ const Komunitaspage = () => {
               />
               <Button
                 className={`font-poppins text-sm py-2 px-3 bg-[#618264] text-white my-3 mx-auto flex font-semibold`}
-                type='submit'
+                type="submit"
               >
                 Kirim
               </Button>
@@ -261,7 +266,7 @@ const Komunitaspage = () => {
         {/* Form Rating End */}
         {/* Ulasan Anggota Komunitas Start */}
         <section className={"w-screen overflow-x-hidden pt-3 pb-5"}>
-          <div className='container mx-auto py-5 px-2 flex gap-4 whitespace-nowrap overflow-x-auto'>
+          <div className="container mx-auto py-5 px-2 flex gap-4 whitespace-nowrap overflow-x-auto">
             <div
               className={
                 "w-3/5 max-w-xs bg-[#B0D9B1] rounded-md aspect-[5/6] flex flex-shrink-0 px-3 flex-col justify-center items-center gap-4 outline outline-3 outline-black"

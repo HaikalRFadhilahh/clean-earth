@@ -6,12 +6,14 @@ import BoxGallery from "../components/BoxGallery";
 import Footer from "../components/Footer";
 import LogoWelcomebanner from "../assets/img/LogoWelcomebanner.png";
 import Iconedukasi from "../assets/img/Iconedukasi.png";
-import Iconkomunitas from "../assets/img/Iconedukasi.png";
+import Iconkomunitas from "../assets/img/Iconkomunitas.png";
 import Prosespembuatan1 from "../assets/img/Prosespembuatan1.jpg";
 import Prosespembuatan2 from "../assets/img/Prosespembuatan2.jpg";
 import Prosespembuatan3 from "../assets/img/Prosespembuatan3.jpg";
 import Prosespembuatan4 from "../assets/img/Prosespembuatan4.jpg";
 import ContactUs from "../assets/img/ContactUs.png";
+
+import { Link } from 'react-router-dom';
 
 const Homepage = () => {
   return (
