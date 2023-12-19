@@ -1,17 +1,45 @@
 import Navbar from "../components/Navbar";
 import Auth from "../middleware/Auth";
-import banner from "../assets/artikel/banner.png";
-import img1 from "../assets/artikel/img-1.png";
 import Footer from "../components/Footer";
+import { useNavigate, useParams } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { token } from "../store";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const BacaArtikel = () => {
+  const { id } = useParams();
+  const [tokenJWT, setTokenJWT] = useRecoilState(token);
+  const navigate = useNavigate();
+  const [postingan, setPostingan] = useState({});
+  useEffect(() => {
+    const getSinglePostingan = async () => {
+      try {
+        const result = await axios.post(
+          `${import.meta.env.VITE_API_SERVICE}/postingan/${id}`,
+          {},
+          {
+            headers: {
+              Authorization: tokenJWT,
+              Accept: "application/json",
+              "Content-Type": "application/json;charset=UTF-8",
+            },
+          }
+        );
+        setPostingan(result.data.data);
+      } catch (error) {
+        navigate("/edukasi");
+      }
+    };
+    getSinglePostingan();
+  }, [navigate]);
   return (
     <Auth>
       <div className={"w-full overflow-x-hidden"}>
         <Navbar />
         <div
           style={{
-            backgroundImage: `url(${banner})`,
+            backgroundImage: `url(https://source.unsplash.com/random/?garbage)`,
             backgroundSize: "cover",
             backgroundPosition: "bottom",
           }}
@@ -20,7 +48,7 @@ const BacaArtikel = () => {
           <div className='md:w-1/2 py-32 flex flex-col justify-center text-white'>
             <div className='px-8 text-center'>
               <h1 className='text-3xl md:text-4xl font-bold font-poppins'>
-                Ancaman Masalah Sampah
+                {postingan.judul}
               </h1>
             </div>
           </div>
@@ -33,43 +61,18 @@ const BacaArtikel = () => {
 
           <div className='w-screen py-16 flex flex-col justify-center items-center'>
             <h1 className='text-3xl font-bold font-poppins text-center'>
-              Ancaman Penumpukan Sampah di Indonesia dan Sumbernya
+              {postingan.judul}
             </h1>
-            <p className='text-xl font-poppins font-light my-8 text-justify'>
-              Jakarta, 10 November 2023 - Penumpukan sampah menjadi ancaman serius bagi lingkungan di Indonesia. Berdasarkan data dari Kementerian Lingkungan Hidup dan Kehutanan, jumlah sampah yang dihasilkan di Indonesia mencapai 64 juta ton per tahun. Fenomena ini telah menimbulkan berbagai dampak negatif terhadap ekosistem dan kesehatan masyarakat.
-              <br />
-              <br />
-              Peningkatan populasi dan urbanisasi yang pesat juga turut berkontribusi pada penumpukan sampah. Kota-kota besar seperti Jakarta, Surabaya, dan Bandung menghadapi tantangan besar dalam mengelola sampah yang terus bertambah setiap harinya. Kurangnya lahan untuk pembuangan sampah dan terbatasnya fasilitas daur ulang menjadi kendala utama dalam mengatasi masalah ini. Selain itu, industri juga berperan dalam penumpukan sampah di Indonesia. Beberapa sektor industri masih menggunakan bahan-bahan yang sulit terurai dan menghasilkan limbah berbahaya. Ketika limbah ini tidak dikelola dengan baik, maka akan berdampak negatif pada lingkungan sekitar.
-            </p>
-
-            <div className='w-3/4 md:w-1/2 flex justify-center items-center'>
-              <img
-                src={img1}
-                alt='sampah'
-                className='bg-center bg-cover rounded-2xl'
-              />
+            <div className='text-xl font-poppins font-light my-8 text-justify'>
+              {postingan.isi}
             </div>
-
-            <p className='text-xl font-poppins font-light my-8 text-justify'>
-               Peningkatan populasi dan urbanisasi yang pesat juga turut berkontribusi pada penumpukan sampah. Kota-kota besar seperti Jakarta, Surabaya, dan Bandung menghadapi tantangan besar dalam mengelola sampah yang terus bertambah setiap harinya. Kurangnya lahan untuk pembuangan sampah dan terbatasnya fasilitas daur ulang menjadi kendala utama dalam mengatasi masalah ini.
-               Selain itu, industri juga berperan dalam penumpukan sampah di Indonesia. Beberapa sektor industri masih menggunakan bahan-bahan yang sulit terurai dan menghasilkan limbah berbahaya. Ketika limbah ini tidak dikelola dengan baik, maka akan berdampak negatif pada lingkungan sekitar.
-              <br />
-              <br />
-              Pemerintah Indonesia telah melakukan berbagai upaya untuk mengatasi masalah penumpukan sampah ini. Program-program pengelolaan sampah seperti pengurangan, daur ulang, dan pemulihan energi telah diterapkan. Namun, upaya ini masih perlu ditingkatkan untuk mengatasi masalah yang lebih kompleks.
-              <br />
-              <br />
-              Sumber: <br />
-               1. Kementerian Lingkungan Hidup dan Kehutanan - www.menlhk.go.id <br />
-               2. Badan Pusat Statistik Indonesia - www.bps.go.id <br />
-               3. BeritaSatu.com - www.beritasatu.com <br />
-            </p>
           </div>
         </section>
       </div>
 
       <Footer />
     </Auth>
-  )
-}
+  );
+};
 
-export default BacaArtikel
+export default BacaArtikel;

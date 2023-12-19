@@ -18,7 +18,7 @@ const BoxUlasan = (props) => {
         <img
           src={img}
           alt='User Images'
-          className={"w-10 object-fill bg-center bg-red-300 rounded-full"}
+          className={"w-10 object-cover bg-center rounded-full aspect-square"}
         />
         <p className={"font-lexend text-base"}>{name}</p>
       </div>

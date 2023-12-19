@@ -9,6 +9,7 @@ import peopleKomunitas1 from "../assets/img/peopleKomunitas1.png";
 import peopleKomunitas2 from "../assets/img/peopleKomunitas2.png";
 import peopleKomunitas3 from "../assets/img/peopleKomunitas3.png";
 import peopleKomunitas4 from "../assets/img/peopleKomunitas4.png";
+import guestUsers from "../assets/img/guestUsers.webp";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { token } from "../store";
@@ -27,12 +28,6 @@ const Komunitaspage = () => {
   const [loading, setLoading] = useState(false);
   const [dataUlasan, setDataUlasan] = useState([]);
   const [trigger, setTrigger] = useState(false);
-  const staticPP = [
-    peopleKomunitas1,
-    peopleKomunitas2,
-    peopleKomunitas3,
-    peopleKomunitas4,
-  ];
 
   useEffect(() => {
     const getDataUlasan = async () => {
@@ -289,7 +284,11 @@ const Komunitaspage = () => {
             {dataUlasan.map((item) => (
               <BoxUlasan
                 key={item.id}
-                img={staticPP[Math.floor(Math.random() * (3 - 0 + 1)) + 0]}
+                img={
+                  item.users.image == null
+                    ? guestUsers
+                    : `${import.meta.env.VITE_API_SERVICE}${item.users.image}`
+                }
                 name={item.users.nama}
                 bintang={item.bintang}
                 komentar={item.komentar}

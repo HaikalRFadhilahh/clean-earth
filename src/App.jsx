@@ -35,7 +35,7 @@ const App = () => {
         <Route path='/' element={<Homepage />} />
         <Route path='/edukasi' element={<Edukasipage />} />
         <Route path='/komunitas' element={<Komunitaspage />} />
-        <Route path='/baca' element={<BacaArtikel />} />
+        <Route path='/baca/:id' element={<BacaArtikel />} />
         <Route path='/masuk' element={<Loginpage />} />
         <Route path='/daftar' element={<Registerpage />} />
 

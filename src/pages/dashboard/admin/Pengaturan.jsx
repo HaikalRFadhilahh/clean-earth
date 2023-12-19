@@ -1,32 +1,49 @@
 import React from "react";
-import ImgProfile from "../../../assets/img/ProfileAdmin.png";
+import { datausers } from "../../../store";
+import { useRecoilState } from "recoil";
+import guestUsers from "../../../assets/img/guestUsers.webp";
+import { convertToInternationalFormat } from "../../../function/convertToInternationalNumber";
+import { NavLink } from "react-router-dom";
 
 const Dashboard = () => {
+  const [datauser, setDatauser] = useRecoilState(datausers);
   return (
-    <div className="relative flex flex-col flex-1 overflow-y-hidden overflow-x-hidden">
+    <div className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'>
       <main>
-        <div className="relative mx-4 sm:p-6 rounded-sm overflow-hidden">
-          <h1 className="font-poppins p-4 rounded-lg text-2xl md:text-3xl bg-[#718977] text-white shadow-xl font-bold capitalize">
+        <div className='relative mx-4 sm:p-6 rounded-sm overflow-hidden'>
+          <h1 className='font-poppins p-4 rounded-lg text-2xl md:text-3xl bg-[#718977] text-white shadow-xl font-bold capitalize'>
             Profil Admin
           </h1>
         </div>
-
-        <div className="flex flex-col justify-center items-center my-2">
+        <div className='flex flex-col items-center my-4 py-10'>
           <div>
-            <img src={ImgProfile} alt="" />
+            <img
+              src={
+                datauser.image == null
+                  ? guestUsers
+                  : `${import.meta.env.VITE_API_SERVICE}${datauser.image}`
+              }
+              alt=''
+              className={
+                "w-1/2 md:w-2/3 max-w-md aspect-square object-cover rounded-full mx-auto"
+              }
+            />
           </div>
-          <div className="text-center font-poppins mt-5">
-            <h2 className="font-bold  text-2xl mt-5">Ndaru Windra Sayidinaa</h2>
-            <h3 className="font-bold text-sm mt-5">
-              Magetan, Jawa Timur, Indonesia
-            </h3>
-            <p className="mt-5">ndaruw29@gmail.com</p>
-            <p className="mt-5">+62 851-5887-1473</p>
+          <div className='text-center font-poppins mt-5 w-full'>
+            <h2 className='font-bold  text-3xl mt-5'>{datauser.nama}</h2>
+            <p className='mt-5 text-xl font-semibold'>{datauser.alamat}</p>
+            <p className='mt-5 text-lg'>{datauser.email}</p>
+            <p className='mt-5 text-lg'>
+              {convertToInternationalFormat(datauser.kontak)}
+            </p>
           </div>
-          <div className="mt-5 font-poppins">
-            <a href="/dashboard/biodata">
-              <button className="bg-[#B0D9B1] p-2 w-28 rounded-xl">Edit</button>
-            </a>
+          <div className='mt-5 font-poppins'>
+            <NavLink
+              to={"/dashboard/biodata"}
+              className='bg-[#B0D9B1] py-3 px-6 w-28 rounded-xl'
+            >
+              Edit
+            </NavLink>
           </div>
         </div>
       </main>

@@ -4,21 +4,21 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { IoMdMenu } from "react-icons/io";
 import { FaUser } from "react-icons/fa6";
-import { nama, token } from "../store";
+import { token, datausers } from "../store";
 import { useRecoilState } from "recoil";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [name, setName] = useRecoilState(nama);
   const [tokenJWT, setTokenJWT] = useRecoilState(token);
   const [configToggle, setConfigToggle] = useState(false);
+  const [datauser, setDatauser] = useRecoilState(datausers);
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    setName(undefined);
     setTokenJWT(undefined);
     setConfigToggle(false);
+    setDatauser({});
     setOpen(false);
     navigate("/");
   };
@@ -49,18 +49,12 @@ const Navbar = () => {
             <NavLink to={"/komunitas"}>Komunitas</NavLink>
           </li>
         </ul>
-        {name == undefined ? (
+        {datauser.nama == undefined ? (
           <div className={"hidden md:flex gap-3"}>
-            <Button
-              className='bg-[#618264] text-white'
-              type='submit'
-            >
+            <Button className='bg-[#618264] text-white' type='submit'>
               <NavLink to='daftar'>Daftar</NavLink>
             </Button>
-            <Button
-              className='bg-[#F6F6F6] shadow-xl'
-              type='submit'
-            >
+            <Button className='bg-[#F6F6F6] shadow-xl' type='submit'>
               <NavLink to='masuk'>Masuk</NavLink>
             </Button>
           </div>
@@ -73,12 +67,22 @@ const Navbar = () => {
           >
             <div
               className={
-                "w-8 aspect-square rounded-full bg-green-700 flex justify-center items-center"
+                "w-8 aspect-square rounded-full bg-green-700 flex justify-center items-center overflow-hidden"
               }
             >
-              <FaUser width={"100%"} height={"100%"} color={"white"} />
+              {datauser.image == null ? (
+                <FaUser width={"100%"} height={"100%"} color={"white"} />
+              ) : (
+                <img
+                  src={`${import.meta.env.VITE_API_SERVICE}${datauser.image}`}
+                  alt='Profile Picture'
+                  className={"w-full h-full object-cover"}
+                />
+              )}
             </div>
-            <p className={"font-poppins font-medium text-sm"}>{name}</p>
+            <p className={"font-poppins font-medium text-sm"}>
+              {datauser.nama}
+            </p>
             {/* Toggle Action User Navbar Start*/}
             <div
               className={`${
@@ -124,36 +128,16 @@ const Navbar = () => {
               Komunitas
             </NavLink>
           </li>
-          {/* <div className={"flex md:hidden gap-3 py-3"}>
-            <Button
-              className='outline outline-2 bg-[#B0D9B1] '
-              type='submit'
-            >
-              Daftar
-            </Button>
-            <Button
-              className='bg-[#F6F6F6] outline outline-2 '
-              type='submit'
-            >
-              Masuk
-            </Button>
-          </div> */}
-          {name == undefined ? (
+          {datauser.nama == undefined ? (
             <div className={"flex md:hidden gap-3 py-3"}>
               <NavLink to={"/daftar"}>
-                <Button
-                  className=' bg-[#618264] text-white'
-                  type='submit'
-                >
+                <Button className=' bg-[#618264] text-white' type='submit'>
                   Daftar
                 </Button>
               </NavLink>
 
               <NavLink to={"/masuk"}>
-                <Button
-                  className='bg-[#F6F6F6] shadow-xl'
-                  type='submit'
-                >
+                <Button className='bg-[#F6F6F6] shadow-xl' type='submit'>
                   Masuk
                 </Button>
               </NavLink>
@@ -167,7 +151,7 @@ const Navbar = () => {
                 onClick={() => setConfigToggle(!configToggle)}
               >
                 <p className={"font-poppins font-medium text-md flex"}>
-                  {name}
+                  {datauser.nama}
                 </p>
                 <IoMdArrowDropdown size={24} />
               </div>

@@ -10,9 +10,9 @@ const token = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
-const nama = atom({
-  key: "nama",
-  default: undefined,
+const datausers = atom({
+  key: "datausers",
+  default: {},
   effects_UNSTABLE: [persistAtom],
 });
 
@@ -38,27 +38,4 @@ const getStatusAuth = selector({
   },
 });
 
-// const getUserData = selector({
-//   key: "getUserData",
-//   get: async ({ get }) => {
-//     const tokenJWT = get(token);
-//     try {
-//       const res = await axios.post(
-//         `${import.meta.env.VITE_API_SERVICE}/users/validate`,
-//         {},
-//         {
-//           headers: {
-//             "Content-Type": "application/json",
-//             Authorization: tokenJWT,
-//           },
-//         }
-//       );
-
-//       return res.data.data;
-//     } catch (error) {
-//       localStorage.removeItem("recoil-persist");
-//     }
-//   },
-// });
-
-export { token, getStatusAuth, nama };
+export { token, getStatusAuth, datausers };
