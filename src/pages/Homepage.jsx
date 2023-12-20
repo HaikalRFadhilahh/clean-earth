@@ -12,8 +12,7 @@ import Prosespembuatan2 from "../assets/img/Prosespembuatan2.jpg";
 import Prosespembuatan3 from "../assets/img/Prosespembuatan3.jpg";
 import Prosespembuatan4 from "../assets/img/Prosespembuatan4.jpg";
 import ContactUs from "../assets/img/ContactUs.png";
-
-import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 const Homepage = () => {
   return (
@@ -43,12 +42,12 @@ const Homepage = () => {
               gabung bersama komunitas kami untuk membuat perubahan positif
               dalam menjaga bumi kita tetap hijau dan sehat{" "}
             </p>
-            <a
-              href={"#tentangKami"}
+            <NavLink
+              to={"/komunitas"}
               className='bg-[rgb(97,130,100)] text-white shadow-xl px-5 py-3 rounded-md'
             >
               Gabung Yuk
-            </a>
+            </NavLink>
           </div>
         </div>
         <div
