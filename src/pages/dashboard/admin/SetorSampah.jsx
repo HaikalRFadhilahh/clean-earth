@@ -198,9 +198,12 @@ const SetorSampah = () => {
                           {items.nominal}
                         </td>
                         <td className='px-6 py-4 flex justify-center gap-2'>
-                          <Button className='bg-[#FFE382]'>
+                          <NavLink
+                            to={`/dashboard/editsetorsampah/${items.id}`}
+                            className='bg-[#FFE382] px-5 py-2 rounded-md'
+                          >
                             <FaEdit size={20} color={"#191919"} />
-                          </Button>
+                          </NavLink>
                           <Button
                             className='bg-[#BF3131]'
                             onClick={() => handleDelete(items.id)}
@@ -237,9 +240,12 @@ const SetorSampah = () => {
                         {items.nominal}
                       </td>
                       <td className='px-6 py-4 flex justify-center gap-2'>
-                        <Button className='bg-[#FFE382]'>
+                        <NavLink
+                          to={`/dashboard/editsetorsampah/${items.id}`}
+                          className='bg-[#FFE382] px-5 py-2 rounded-md'
+                        >
                           <FaEdit size={20} color={"#191919"} />
-                        </Button>
+                        </NavLink>
                         <Button
                           className='bg-[#BF3131]'
                           onClick={() => handleDelete(items.id)}
