@@ -1,10 +1,9 @@
-import { React, useState } from 'react';
-import Editor from 'react-simple-wysiwyg';
+import { React, useState } from "react";
+import Editor from "react-simple-wysiwyg";
 
 const Postingan = () => {
+  const [html, setHtml] = useState("");
 
-  const [html, setHtml] = useState('');
-  
   function onChange(e) {
     setHtml(e.target.value);
   }
@@ -17,33 +16,28 @@ const Postingan = () => {
             Postingan
           </h1>
         </div>
-        <div className='w-full flex justify-between p-4 sm:px-10'>
-        </div>
+        <div className='w-full flex justify-between p-4 sm:px-10'></div>
         <div className='px-8 py-6 w-fullmin-h h-fit overflow-auto'>
           <h2 className='text-xl font-bold border-b-2 px-2 py-4'>
-          Informasi Data Postingan
+            Informasi Data Postingan
           </h2>
           <div className='flex flex-col my-4 w-full'>
             <label className='py-2'>Judul</label>
-            <input 
-            type="text"
-            name="judul"
-            className='w-2/3 rounded-xl'
-            />
+            <input type='text' name='judul' className='w-2/3 rounded-xl' />
           </div>
           <div className='mt-8'>
-            <Editor value={html} onChange={onChange} /> 
+            <Editor value={html} onChange={onChange} />
           </div>
           <div className='my-12 flex justify-center gap-4 text-white'>
             <button
-              type="batal"
-              className="bg-[#949494] py-2 px-4 rounded hover:bg-[#727272]"
+              type='batal'
+              className='bg-[#949494] py-2 px-4 rounded hover:bg-[#727272]'
             >
               Batal
             </button>
             <button
-              type="submit"
-              className="bg-[#154EF9] py-2 px-4 rounded hover:bg-[#161ae2]"
+              type='submit'
+              className='bg-[#154EF9] py-2 px-4 rounded hover:bg-[#161ae2]'
             >
               Simpan
             </button>
@@ -51,7 +45,7 @@ const Postingan = () => {
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Postingan
+export default Postingan;

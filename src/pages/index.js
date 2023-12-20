@@ -16,10 +16,11 @@ import PengaturanBiodataUser from "./dashboard/user/PengaturanBiodata";
 import PengaturanKatasandiUser from "./dashboard/user/PengaturanKatasandi";
 import TambahNasabah from "./dashboard/admin/TambahNasabah";
 import EditNasabah from "./dashboard/admin/EditNasabah";
-import BacaArtikel from "./BacaArtikel"; 
+import BacaArtikel from "./BacaArtikel";
 import Komunitaspage from "./Komunitaspage";
 import TambahSetorSampah from "./dashboard/admin/TambahSetorSampah";
 import EditSetorSampah from "./dashboard/admin/EditSetorSampah";
+import GetPostingan from "./dashboard/admin/GetPostingan";
 
 export {
   Nasabah,
@@ -44,4 +45,5 @@ export {
   Komunitaspage,
   TambahSetorSampah,
   EditSetorSampah,
+  GetPostingan,
 };

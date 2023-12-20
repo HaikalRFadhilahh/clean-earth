@@ -26,6 +26,7 @@ import {
   Komunitaspage,
   TambahSetorSampah,
   EditSetorSampah,
+  GetPostingan,
 } from "./pages/";
 
 const App = () => {
@@ -43,7 +44,6 @@ const App = () => {
           <Route index element={<DashboardAdmin />} />
           <Route path='nasabah' element={<Nasabah />} />
           <Route path='setorsampah' element={<SetorSampah />} />
-          <Route path='postingan' element={<Postingan />} />
           <Route path='pengaturan' element={<PengaturanAdmin />} />
           <Route path='biodata' element={<PengaturanBiodataAdmin />} />
           <Route path='katasandi' element={<PengaturanKatasandiAdmin />} />
@@ -51,6 +51,9 @@ const App = () => {
           <Route path='tambahsetorsampah' element={<TambahSetorSampah />} />
           <Route path='editnasabah/:id' element={<EditNasabah />} />
           <Route path='editsetorsampah/:id' element={<EditSetorSampah />} />
+          <Route path={"postingan"} element={<GetPostingan />} />
+          <Route path='tambahpostingan' element={<Postingan />} />
+          <Route path='editpostingan/:id' element={<Postingan />} />
         </Route>
 
         <Route path='/profile' element={<DashboardUserLayout />}>
