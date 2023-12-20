@@ -34,8 +34,7 @@ const GetPostingan = () => {
             },
           }
         );
-        console.log(res.data.data);
-        setPostingan(res.data.data);
+        setPostingan(res.data.data || []);
       } catch (error) {
         setTokenJWT(undefined);
         setDatauser({});
@@ -108,7 +107,7 @@ const GetPostingan = () => {
                   scope='col'
                   className='px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider'
                 >
-                  Kutipan
+                  Judul
                 </th>
                 <th
                   scope='col'
@@ -135,7 +134,9 @@ const GetPostingan = () => {
                 <tr>
                   <td
                     colSpan={5}
-                    className={"text-md font-semibold font-poppins"}
+                    className={
+                      "text-md font-semibold font-poppins py-3 text-xl leading-relaxed"
+                    }
                   >
                     Belum Ada Artikel
                   </td>
@@ -147,7 +148,9 @@ const GetPostingan = () => {
                 return (
                   <tr key={items.id}>
                     <td className='px-6 py-4 whitespace-nowrap'>{i + 1}</td>
-                    <td className='px-6 py-4'>{items.slug}</td>
+                    <td className='px-6 py-4 whitespace-nowrap'>
+                      {items.judul}
+                    </td>
                     <td className='px-6 py-4 whitespace-nowrap flex justify-center'>
                       <NavLink
                         to={`/baca/${items.id}`}
@@ -161,7 +164,7 @@ const GetPostingan = () => {
                     <td className='px-6 py-4 whitespace-nowrap '>
                       {items.users.nama}
                     </td>
-                    <td className='px-6 py-4 flex gap-x-2'>
+                    <td className='px-6 py-4 flex gap-x-2 justify-center'>
                       <NavLink
                         className='bg-[#FFE382] px-5 py-2 rounded-md'
                         to={`/dashboard/editpostingan/${items.id}`}

@@ -69,7 +69,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       title: "Berhasil",
       text: "Berhasil Melakukan Logout",
     });
-    navigate("/");
+    navigate("/masuk");
   };
 
   return (

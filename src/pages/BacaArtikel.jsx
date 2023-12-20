@@ -63,9 +63,10 @@ const BacaArtikel = () => {
             <h1 className='text-3xl font-bold font-poppins text-center'>
               {postingan.judul}
             </h1>
-            <div className='text-xl font-poppins font-light my-8 text-justify'>
-              {postingan.isi}
-            </div>
+            <div
+              className='text-xl font-poppins font-light my-8 text-justify'
+              dangerouslySetInnerHTML={{ __html: postingan.isi }}
+            ></div>
           </div>
         </section>
       </div>
