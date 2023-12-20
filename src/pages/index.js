@@ -21,6 +21,7 @@ import Komunitaspage from "./Komunitaspage";
 import TambahSetorSampah from "./dashboard/admin/TambahSetorSampah";
 import EditSetorSampah from "./dashboard/admin/EditSetorSampah";
 import GetPostingan from "./dashboard/admin/GetPostingan";
+import EditPostingan from "./dashboard/admin/EditPostingan";
 
 export {
   Nasabah,
@@ -46,4 +47,5 @@ export {
   TambahSetorSampah,
   EditSetorSampah,
   GetPostingan,
+  EditPostingan,
 };

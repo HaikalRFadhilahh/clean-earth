@@ -27,6 +27,7 @@ import {
   TambahSetorSampah,
   EditSetorSampah,
   GetPostingan,
+  EditPostingan,
 } from "./pages/";
 
 const App = () => {
@@ -53,7 +54,7 @@ const App = () => {
           <Route path='editsetorsampah/:id' element={<EditSetorSampah />} />
           <Route path={"postingan"} element={<GetPostingan />} />
           <Route path='tambahpostingan' element={<Postingan />} />
-          <Route path='editpostingan/:id' element={<Postingan />} />
+          <Route path='editpostingan/:id' element={<EditPostingan />} />
         </Route>
 
         <Route path='/profile' element={<DashboardUserLayout />}>
