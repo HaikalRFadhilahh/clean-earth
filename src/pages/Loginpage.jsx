@@ -55,7 +55,11 @@ const Loginpage = () => {
         }
       );
       setDatauser(result.data.data);
-      navigate("/profile");
+      if (result.data.data.role == "admin") {
+        navigate("/dashboard");
+      } else {
+        navigate("/");
+      }
     } catch (error) {
       setLoading(false);
       if (error.response.status == 400) {

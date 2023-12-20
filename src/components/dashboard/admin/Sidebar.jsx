@@ -1,18 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-
 import { IoMdHome } from "react-icons/io";
 import { FaTrashRestoreAlt } from "react-icons/fa";
 import { IoMdPerson } from "react-icons/io";
 import { BsFillPostcardFill } from "react-icons/bs";
 import { IoMdSettings } from "react-icons/io";
 import { RxExit } from "react-icons/rx";
+import { token, datausers } from "../../../store";
+import { useRecoilState } from "recoil";
+import { useNavigate } from "react-router-dom";
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
 
 import Logo from "../../../assets/img/Logo.png";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const trigger = useRef(null);
   const sidebar = useRef(null);
+  const [tokenJWT, setTokenJWT] = useRecoilState(token);
+  const [datauser, setDatauser] = useRecoilState(datausers);
+  const navigate = useNavigate();
 
   const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
   const [sidebarExpanded, setSidebarExpanded] = useState(
@@ -53,6 +60,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       document.querySelector("body").classList.remove("sidebar-expanded");
     }
   }, [sidebarExpanded]);
+
+  const handleLogout = () => {
+    setTokenJWT(undefined);
+    setDatauser({});
+    withReactContent(Swal).fire({
+      icon: "success",
+      title: "Berhasil",
+      text: "Berhasil Melakukan Logout",
+    });
+    navigate("/");
+  };
 
   return (
     <div>
@@ -148,7 +166,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     <div className='flex items-center '>
                       <IoMdPerson className='text-slate-200 w-7 h-7 group-hover:text-green-500' />
                       <span className=' font-poppins text-base font-medium ml-3 2xl:inline lg:hidden lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 group-hover:text-green-500'>
-                        Nasabah{" "}
+                        Anggota{" "}
                       </span>
                     </div>
                   </div>
@@ -196,9 +214,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   </div>
                 </NavLink>
 
-                <NavLink
+                <div
                   className={`block text-slate-200 truncate transition duration-150 mt-6 md:mt-20`}
-                  to='/'
+                  onClick={() => handleLogout()}
                 >
                   <div className='flex items-center mt-0 justify-between group'>
                     <div className='flex items-center'>
@@ -208,7 +226,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       </span>
                     </div>
                   </div>
-                </NavLink>
+                </div>
               </ul>
             </div>
           </div>
