@@ -1,11 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 import Chart from "../../../components/dashboard/admin/BarChart";
 import CardDashboard from "../../../components/dashboard/admin/CardDashboard";
 import WelcomeBanner from "../../../components/dashboard/admin/WelcomeBanner";
 import Admin from "../../../middleware/Admin";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { datausers, token } from "../../../store";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Loading from "../../../components/Loading";
 
 const Dashboard = () => {
-  return (
+  const [datauser, setDatauser] = useRecoilState(datausers);
+  const [tokenJWT, setTokenJWT] = useRecoilState(token);
+  const [datachart, setDatachart] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [jumlahuser, setJumlahuser] = useState(0);
+  const [jumlahadmin, setJumlahadmin] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getIntialData = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.post(
+          `${import.meta.env.VITE_API_SERVICE}/setorsampah/stats`,
+          {},
+          {
+            headers: {
+              Authorization: tokenJWT,
+              Accept: "application/json",
+              "Content-Type": "application/json;charset=UTF-8",
+            },
+          }
+        );
+        setDatachart(res.data.data);
+        console.log(res.data.data);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setTokenJWT(undefined);
+        setDatauser({});
+        navigate("/masuk");
+      }
+    };
+
+    const getUsers = async () => {
+      setLoading(true);
+      try {
+        const result = await axios.post(
+          `${import.meta.env.VITE_API_SERVICE}/users/getusers`,
+          {},
+          {
+            headers: {
+              Authorization: tokenJWT,
+              Accept: "application/json",
+              "Content-Type": "application/json;charset=UTF-8",
+            },
+          }
+        );
+        setUsers(result.data.data);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setTokenJWT(undefined);
+        setDatauser({});
+        navigate("/masuk");
+      }
+    };
+
+    getUsers();
+    getIntialData();
+  }, [navigate]);
+
+  return loading ? (
+    <Loading show={true} />
+  ) : (
     <Admin>
       <div className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'>
         <main>
@@ -19,10 +90,10 @@ const Dashboard = () => {
             <WelcomeBanner />
           </div>
           <div>
-            <CardDashboard />
+            <CardDashboard jumlahadmin={users.filter((items) => items.role == "admin").length} jumlahuser={users.filter((items) => items.role == "user").length} />
           </div>
           <div className='shadow-2xl border-2 shadow-black-600 p-4 rounded-3xl mx-10 mb-5'>
-            <Chart />
+            <Chart dataChart={datachart} />
           </div>
         </main>
       </div>
