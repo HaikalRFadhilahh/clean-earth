@@ -209,7 +209,6 @@ const Edukasipage = () => {
                   <CardEdukasi
                     imageSrc={"https://source.unsplash.com/random/?garbage"}
                     title={item.judul}
-                    content={item.isi}
                     linkTo={`/baca/${item.id}`}
                   />
                 ))}
