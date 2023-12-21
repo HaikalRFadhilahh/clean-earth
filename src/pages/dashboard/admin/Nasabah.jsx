@@ -95,7 +95,7 @@ const Nasabah = () => {
         </div>
         <div className='px-8 py-6 w-fullmin-h h-fit overflow-auto'>
           <h2 className='text-xl font-semibold border-b-2 px-2 py-4 bg-[#EFF3F0]'>
-            Daftar Nasabah
+            Daftar Anggota
           </h2>
           <table className='min-w-full divide-y divide-gray-200 text-center'>
             <thead className='bg-[#EFF3F0]'>
