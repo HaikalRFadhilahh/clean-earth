@@ -129,7 +129,7 @@ const PengaturanBiodata = () => {
               activeClassName='border-b-2 border-black'
             >
               <div className='flex items-center'>
-                <span className='font-poppins text-base font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200'>
+                <span className='font-poppins text-base font-medium ml-3 2xl:opacity-100 duration-200'>
                   Biodata diri
                 </span>
               </div>
@@ -140,7 +140,7 @@ const PengaturanBiodata = () => {
               activeClassName='border-b-2 border-black'
             >
               <div className='flex items-center border-b-4 p-2 '>
-                <span className='font-poppins text-base font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200'>
+                <span className='font-poppins text-base font-medium ml-3 2xl:opacity-100 duration-200'>
                   Kata Sandi
                 </span>
               </div>

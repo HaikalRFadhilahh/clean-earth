@@ -11,7 +11,6 @@ const CardEdukasi = ({ imageSrc, title, content, linkTo }) => {
           className='bg-center object-cover rounded-2xl w-full aspect-video'
         />
         <h2 className='text-md font-bold font-poppins'>{title}</h2>
-        <p>{content}</p>
       </div>
       <div className='p-2 block mt-auto bg-[#B0D9B1] rounded-b-2xl'>
         <button>
