@@ -188,14 +188,6 @@ const PengaturanBiodata = () => {
             <div className='relative sm:p-6 rounded-sm overflow-hidden'>
               <div className='font-poppins py-4 px-2 rounded-lg text-xl shadow-xl flex justify-between items-center'>
                 <h1 className='font-bold'>Informasi Data Diri</h1>
-                <div>
-                  <NavLink
-                    to={"/profile/akunsaya"}
-                    className='bg-[#949494] p-2 hidden md:inline-block w-20 rounded-xl mr-2 text-sm text-center'
-                  >
-                    Batal
-                  </NavLink>
-                </div>
               </div>
               <div>
                 <form
@@ -286,7 +278,7 @@ const PengaturanBiodata = () => {
                         }}
                       />
                     </div>
-                    <div className='flex flex-col gap-2'>
+                    <div className='flex flex-col gap-2 mt-3'>
                       <label htmlFor='nama' className='font-poppins'>
                         Nomor Kontak
                       </label>
@@ -301,7 +293,7 @@ const PengaturanBiodata = () => {
                       />
                     </div>
                   </div>
-                  <div className={"flex gap-x-2"}>
+                  <div className={"flex gap-x-2 mt-2"}>
                     <button
                       className='px-3 py-1 md:py-2 text-center text-white bg-[#3559E0] rounded-lg text-sm w-fit'
                       type={"submit"}
@@ -310,7 +302,7 @@ const PengaturanBiodata = () => {
                     </button>
                     <NavLink
                       to={"/profile/akunsaya"}
-                      className='bg-[#949494] p-2 w-20 md:hidden rounded-xl mr-2 text-sm text-center'
+                      className='bg-[#949494] p-2 w-20  rounded-xl mr-2 text-sm text-center'
                     >
                       Batal
                     </NavLink>
