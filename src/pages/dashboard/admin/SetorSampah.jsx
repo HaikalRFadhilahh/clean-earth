@@ -83,77 +83,83 @@ const SetorSampah = () => {
   };
 
   return (
-    <div className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'>
+    <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <main>
-        <div className='relative mx-4 sm:p-6 rounded-sm overflow-hidden'>
-          <h1 className='font-poppins p-4 rounded-lg text-2xl md:text-3xl bg-[#718977] text-white shadow-xl font-bold capitalize'>
+        <div className="relative mx-4 sm:p-6 rounded-sm overflow-hidden">
+          <h1 className="font-poppins p-4 rounded-lg text-2xl md:text-3xl bg-[#718977] text-white shadow-xl font-bold capitalize">
             Data Setor Sampah
           </h1>
         </div>
-        <div className='w-full flex justify-between p-4 sm:px-10'>
+        <div className="w-full flex justify-between p-4 sm:px-10">
           <SearchDashboard
             placeholder={"Cari Nama atau Jenis Sampah"}
             onSearch={setSearch}
           />
           <NavLink
-            className='w-fit h-fit px-5 py-2 my-1 ml-2 rounded-md bg-[#B0D9B1] '
-            to='/dashboard/tambahsetorsampah'
+            className="w-fit h-fit px-5 py-2 my-1 ml-2 rounded-md bg-[#B0D9B1] "
+            to="/dashboard/tambahsetorsampah"
           >
             Tambah
           </NavLink>
         </div>
-        <div className='px-8 py-6 w-fullmin-h h-fit overflow-auto'>
-          <h2 className='text-xl font-semibold border-b-2 px-2 py-4 bg-[#EFF3F0]'>
+        <div className="px-8 py-6 w-fullmin-h h-fit overflow-auto">
+          <h2 className="text-xl font-semibold border-b-2 px-2 py-4 bg-[#EFF3F0]">
             Rincian Data Setor Sampah
           </h2>
-          <table className='min-w-full divide-y divide-gray-200 text-center'>
-            <thead className='bg-[#EFF3F0]'>
+          <table className="min-w-full divide-y divide-gray-200 text-center">
+            <thead className="bg-[#EFF3F0]">
               <tr>
                 <th
-                  scope='col'
-                  className='px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  scope="col"
+                  className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
                   Nomor
                 </th>
                 <th
-                  scope='col'
-                  className='px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  scope="col"
+                  className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
                   Waktu
                 </th>
                 <th
-                  scope='col'
-                  className='px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  scope="col"
+                  className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
                   Nama
                 </th>
                 <th
-                  scope='col'
-                  className='px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  scope="col"
+                  className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
                   Jenis Sampah
                 </th>
                 <th
-                  scope='col'
-                  className='px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  scope="col"
+                  className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
                   Jumlah
                 </th>
                 <th
-                  scope='col'
-                  className='px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  scope="col"
+                  className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
                   Nominal
                 </th>
                 <th
-                  scope='col'
-                  className='px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider'
+                  scope="col"
+                  className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Total
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
                   Aksi
                 </th>
               </tr>
             </thead>
-            <tbody className='bg-white divide-y divide-gray-200'>
+            <tbody className="bg-white divide-y divide-gray-200">
               {datasetorsampah.length == 0 ? (
                 <tr>
                   <td colSpan={7} className={"text-lg font-bold font-poppins"}>
@@ -181,31 +187,34 @@ const SetorSampah = () => {
                     });
                     return (
                       <tr key={items.id}>
-                        <td className='px-6 py-4 whitespace-nowrap'>{i + 1}</td>
-                        <td className='px-6 py-4 whitespace-nowrap'>
+                        <td className="px-6 py-4 whitespace-nowrap">{i + 1}</td>
+                        <td className="px-6 py-4 whitespace-nowrap">
                           {formattedDate}
                         </td>
-                        <td className='px-6 py-4 whitespace-nowrap'>
+                        <td className="px-6 py-4 whitespace-nowrap">
                           {items.users.nama}
                         </td>
-                        <td className='px-6 py-4 whitespace-nowrap'>
+                        <td className="px-6 py-4 whitespace-nowrap">
                           {items.jenis_sampah}
                         </td>
-                        <td className='px-6 py-4 whitespace-nowrap'>
+                        <td className="px-6 py-4 whitespace-nowrap">
                           {items.jumlah}
                         </td>
-                        <td className='px-6 py-4 whitespace-nowrap'>
+                        <td className="px-6 py-4 whitespace-nowrap">
                           {items.nominal}
                         </td>
-                        <td className='px-6 py-4 flex justify-center gap-2'>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          {items.jumlah * items.nominal}
+                        </td>
+                        <td className="px-6 py-4 flex justify-center gap-2">
                           <NavLink
                             to={`/dashboard/editsetorsampah/${items.id}`}
-                            className='bg-[#FFE382] px-5 py-2 rounded-md'
+                            className="bg-[#FFE382] px-5 py-2 rounded-md"
                           >
                             <FaEdit size={20} color={"#191919"} />
                           </NavLink>
                           <Button
-                            className='bg-[#BF3131]'
+                            className="bg-[#BF3131]"
                             onClick={() => handleDelete(items.id)}
                           >
                             <MdDelete size={20} color={"#191919"} />
@@ -223,31 +232,34 @@ const SetorSampah = () => {
                   });
                   return (
                     <tr key={items.id}>
-                      <td className='px-6 py-4 whitespace-nowrap'>{i + 1}</td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
+                      <td className="px-6 py-4 whitespace-nowrap">{i + 1}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">
                         {formattedDate}
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
+                      <td className="px-6 py-4 whitespace-nowrap">
                         {items.users.nama}
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
+                      <td className="px-6 py-4 whitespace-nowrap">
                         {items.jenis_sampah}
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
+                      <td className="px-6 py-4 whitespace-nowrap">
                         {items.jumlah}
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
+                      <td className="px-6 py-4 whitespace-nowrap">
                         {items.nominal}
                       </td>
-                      <td className='px-6 py-4 flex justify-center gap-2'>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {items.jumlah * items.nominal}
+                      </td>
+                      <td className="px-6 py-4 flex justify-center gap-2">
                         <NavLink
                           to={`/dashboard/editsetorsampah/${items.id}`}
-                          className='bg-[#FFE382] px-5 py-2 rounded-md'
+                          className="bg-[#FFE382] px-5 py-2 rounded-md"
                         >
                           <FaEdit size={20} color={"#191919"} />
                         </NavLink>
                         <Button
-                          className='bg-[#BF3131]'
+                          className="bg-[#BF3131]"
                           onClick={() => handleDelete(items.id)}
                         >
                           <MdDelete size={20} color={"#191919"} />
